@@ -297,15 +297,11 @@ class LoginController extends Controller
         if ($user->isAdmin()) {
             return redirect(getAdminPanelUrl());
         } else {
-<<<<<<< HEAD
-            return redirect('/panel');
-=======
             $to = '/panel';
             if (session()->has('last_see_course_url')) {
                 $to = session()->get('last_see_course_url');
             }
             return redirect($to);
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
         }
     }
 

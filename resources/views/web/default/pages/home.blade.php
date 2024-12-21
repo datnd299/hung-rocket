@@ -7,26 +7,6 @@
 @php
 $videoDemos = [
     [
-<<<<<<< HEAD
-        'name' => 'Video 1',
-        'desc' => 'Ai đang làm việc 1',
-        'source' => '/assets/bg1.jpg',
-        'type' => 'image'
-    ],
-    [
-        'name' => 'Video 2',
-        'desc' => 'Ai đang làm việc 2',
-        'source' => '/assets/bg2.jpg',
-        'type' => 'image'
-    ],
-    [
-        'name' => 'Video 3',
-        'desc' => 'Ai đang làm việc 3',
-        'source' => '/assets/bg3.jpg',
-        'type' => 'image'
-    ]
-];
-=======
         'name' => 'Trí tuệ nhân tạo không chỉ là công cụ, mà là cánh cửa mở ra tiềm năng vô hạn của con người.',
         'desc' => '',
         'source' => '/assets/a1.jpg',
@@ -53,7 +33,6 @@ $videoDemos = [
 ];
 $fanpageUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
 $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
 @endphp
 
 @section('content')
@@ -66,11 +45,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
             @endpush
         @endif
 
-<<<<<<< HEAD
-        <section class="slider-container  {{ ($heroSection == "2") ? 'slider-hero-section2' : '' }}" @if(empty($heroSectionData['is_video_background'])) style="background-image: url('/assets/default/img/home/world.png')" @endif>
-=======
         <section class="slider-container  {{ ($heroSection == "2") ? 'slider-hero-section2' : '' }}" @if(empty($heroSectionData['is_video_background'])) style="background-image: url('/assets/bg4.jpg')" @endif>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
 
             @if($heroSection == "2")
                 @if(true || !empty($heroSectionData['is_video_background']))
@@ -87,11 +62,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
                 @if($heroSection == "2")
                     <div class="row slider-content align-items-center hero-section2 flex-column-reverse flex-md-row">
                         <div class="col-12 col-md-6 col-lg-5">
-<<<<<<< HEAD
-                            <h1 class="text-secondary font-weight-bold">Biến AI thành tay sai của bạn</h1>
-=======
                             <h1 class="text-gray font-weight-bold">Biến AI thành tay sai của bạn</h1>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                             <p class="slide-hint text-gray mt-20">Chào mừng bạn đến với Hưng AI Creative – nơi biến đam mê thành sức mạnh sáng tạo vượt bậc! Học cách làm chủ AI, tạo video siêu ấn tượng, tăng năng suất tối đa và bứt phá từ nghiệp dư thành chuyên gia. Tự tay tạo ra những content triệu view, chinh phục mọi xu hướng!</p>
 
 {{--                            <form action="/search" method="get" class="d-inline-flex mt-30 mt-lg-30 w-100">--}}
@@ -135,11 +106,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
     @include('web.default.pages.includes.home_statistics')
     <section class="home-sections home-sections-swiper container mt-0">
         <div class="px-20 px-md-0">
-<<<<<<< HEAD
-            <h2 class="section-title">Dự án của tôi</h2>
-=======
             <h2 class="section-title">Cùng tôi chinh phục AI</h2>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
         </div>
 
         <div class="feature-slider-container position-relative d-flex justify-content-center mt-10">
@@ -149,13 +116,8 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
                         <div class="swiper-slide">
                             <div class="h-100">
                                 <div class="feature-slider d-flex h-100" @if($videoDemo['type'] == 'image') style="background-image: url('{{$videoDemo['source']}}')" @endif">
-<<<<<<< HEAD
-                                    <div class="mask"></div>
-                                    <div class="p-5 p-md-25 feature-slider-card" style="width: 435px; height: 300px">
-=======
 {{--                                    <div class="mask"></div>--}}
                                     <div class="p-5 p-md-25 feature-slider-card card-ai-hint" style="width: 435px" >
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                                         <div class="d-flex flex-column feature-slider-body position-relative h-200">
                                             <div>
                                                 <h3 class="card-title mt-1">{{ $videoDemo['name'] }}</h3>
@@ -744,11 +706,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 
                             <div class="mt-35 d-flex align-items-center">
                                 @if(!empty($findInstructorSection['button1']) and !empty($findInstructorSection['button1']['title']) and !empty($findInstructorSection['button1']['link']))
-<<<<<<< HEAD
-                                    <a href="{{ $findInstructorSection['button1']['link'] }}" class="btn btn-primary mr-15">Liên hệ ngay</a>
-=======
                                     <a href="{{$contactNowUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                                 @endif
 
 {{--                                @if(!empty($findInstructorSection['button2']) and !empty($findInstructorSection['button2']['title']) and !empty($findInstructorSection['button2']['link']))--}}
@@ -760,11 +718,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 
                     <div class="col-12 col-lg-6 mt-20 mt-lg-0">
                         <div class="position-relative ">
-<<<<<<< HEAD
-                            <img src="/assets/bg2.jpg" class="find-instructor-section-hero" alt="Khóa học đào tạo 1:1 AI">
-=======
                             <img src="/assets/coaching.jpg" class="find-instructor-section-hero" alt="Khóa học đào tạo 1:1 AI">
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                             <img src="/assets/default/img/home/circle-4.png" class="find-instructor-section-circle" alt="circle">
                             <img src="/assets/default/img/home/dot.png" class="find-instructor-section-dots" alt="dots">
 
@@ -889,11 +843,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 
                             <div class="mt-35 d-flex align-items-center">
                                 @if(!empty($forumSection['button1']) and !empty($forumSection['button1']['title']) and !empty($forumSection['button1']['link']))
-<<<<<<< HEAD
-                                    <a href="{{ $forumSection['button1']['link'] }}" class="btn btn-primary mr-15">Liên hệ ngay</a>
-=======
                                     <a href="{{$contactNowUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                                 @endif
 
 {{--                                @if(!empty($forumSection['button2']) and !empty($forumSection['button2']['title']) and !empty($forumSection['button2']['link']))--}}
@@ -909,17 +859,6 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
         @if($homeSection->name == \App\Models\HomeSection::$video_or_image_section and !empty($boxVideoOrImage))
             <section class="home-sections home-sections-swiper position-relative">
                 <div class="home-video-mask"></div>
-<<<<<<< HEAD
-                <div class="container home-video-container d-flex flex-column align-items-center justify-content-center position-relative" style="background-image: url('/assets/bg3.jpg'">
-                    <a href="{{ $boxVideoOrImage['link'] ?? '' }}" class="home-video-play-button d-flex align-items-center justify-content-center position-relative">
-                        <i data-feather="play" width="36" height="36" class=""></i>
-                    </a>
-
-                    <div class="mt-50 pt-10 text-center">
-                        <h2 class="home-video-title">{{ $boxVideoOrImage['title'] ?? '' }}</h2>
-                        <p class="home-video-hint mt-10">{{ $boxVideoOrImage['description'] ?? '' }}</p>
-                    </div>
-=======
                     <div class="container position-relative videoWrapper">
 {{--                <div class="container home-video-container d-flex flex-column align-items-center justify-content-center position-relative" style="background-image: url('/assets/bg3.jpg'">--}}
 {{--                    <a href="{{ $boxVideoOrImage['link'] ?? '' }}" class="home-video-play-button d-flex align-items-center justify-content-center position-relative">--}}
@@ -930,7 +869,6 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 {{--                        <h2 class="home-video-title">{{ $boxVideoOrImage['title'] ?? '' }}</h2>--}}
 {{--                        <p class="home-video-hint mt-10">{{ $boxVideoOrImage['description'] ?? '' }}</p>--}}
 {{--                    </div>--}}
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                 </div>
             </section>
         @endif
@@ -994,23 +932,11 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
         @if($homeSection->name == \App\Models\HomeSection::$half_advertising_banner and !empty($advertisingBanners2) and count($advertisingBanners2))
             <div class="home-sections container">
                 <div class="row">
-<<<<<<< HEAD
-                        <div class="col-6">
-                            <a href="#">
-                                <img src="/assets/bg1.jpg" class="img-cover rounded-sm">
-                            </a>
-                        </div>
-                    <div class="col-6">
-                        <a href="#">
-                            <img src="/assets/bg2.jpg" class="img-cover rounded-sm">
-                        </a>
-=======
                     <div class="col-12 col-md-6 videoWrapper ">
                         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mmfQY0V98kI?si=5L_Y71sDQMQvZ9Kt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="col-12 col-md-6 videoWrapper">
                         <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YNkMC_fqbL0?si=2xiYqDk_AZ_FOKAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                     </div>
                 </div>
             </div>

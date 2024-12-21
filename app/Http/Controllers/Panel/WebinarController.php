@@ -596,10 +596,7 @@ class WebinarController extends Controller
         if ($currentStep == 3) {
             $rules = [
                 'price' => 'nullable|numeric|min:0',
-<<<<<<< HEAD
-=======
                 'original_price' => 'nullable|numeric|min:0',
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             ];
         }
 
@@ -670,10 +667,7 @@ class WebinarController extends Controller
         if ($currentStep == 3) {
             $data['subscribe'] = !empty($data['subscribe']) ? true : false;
             $data['price'] = !empty($data['price']) ? convertPriceToDefaultCurrency($data['price']) : null;
-<<<<<<< HEAD
-=======
             $data['original_price'] = !empty($data['original_price']) ? convertPriceToDefaultCurrency($data['original_price']) : null;
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             $data['organization_price'] = !empty($data['organization_price']) ? convertPriceToDefaultCurrency($data['organization_price']) : null;
         }
 

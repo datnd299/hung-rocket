@@ -20,11 +20,7 @@ return [
     'total_income' => 'Total income',
     'income' => 'Income',
     'show_only_webinars' => 'Show only courses',
-<<<<<<< HEAD
-    'total_amount' => 'Total Amount',
-=======
     'total_amount' => 'Tổng số tiền',
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
     'total_sales' => 'Total sales',
     'sales_no_result' => 'Your sales list is empty...',
     'sales_no_result_hint' => 'Your sales history will be displayed here.',

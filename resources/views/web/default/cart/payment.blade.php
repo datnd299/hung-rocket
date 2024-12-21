@@ -42,11 +42,7 @@
                     @foreach($paymentChannels as $paymentChannel)
                         @if(!$isMultiCurrency or (!empty($paymentChannel->currencies) and in_array($userCurrency, $paymentChannel->currencies)))
                             <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-<<<<<<< HEAD
-                                <input type="radio" name="gateway" id="{{ $paymentChannel->title }}" data-class="{{ $paymentChannel->class_name }}" value="{{ $paymentChannel->id }}">
-=======
                                 <input @if(count($paymentChannels) == 1) checked @endif type="radio" name="gateway" id="{{ $paymentChannel->title }}" data-class="{{ $paymentChannel->class_name }}" value="{{ $paymentChannel->id }}">
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                                 <label for="{{ $paymentChannel->title }}" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
                                     <img src="{{ $paymentChannel->image }}" width="120" height="60" alt="">
 
@@ -63,22 +59,6 @@
                         @endif
                     @endforeach
                 @endif
-
-<<<<<<< HEAD
-                <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-                    <input type="radio" @if(empty($userCharge) or ($total > $userCharge)) disabled @endif name="gateway" id="offline" value="credit">
-                    <label for="offline" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
-                        <img src="/assets/default/img/activity/pay.svg" width="120" height="60" alt="">
-
-                        <p class="mt-30 mt-lg-50 font-weight-500 text-dark-blue">
-                            {{ trans('financial.account') }}
-                            <span class="font-weight-bold">{{ trans('financial.charge') }}</span>
-                        </p>
-
-                        <span class="mt-5">{{ handlePrice($userCharge) }}</span>
-                    </label>
-                </div>
-=======
 {{--                <div class="col-6 col-lg-4 mb-40 charge-account-radio">--}}
 {{--                    <input type="radio" @if(empty($userCharge) or ($total > $userCharge)) disabled @endif name="gateway" id="offline" value="credit">--}}
 {{--                    <label for="offline" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">--}}
@@ -92,7 +72,6 @@
 {{--                        <span class="mt-5">{{ handlePrice($userCharge) }}</span>--}}
 {{--                    </label>--}}
 {{--                </div>--}}
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             </div>
 
             @if(!empty($invalidChannels) and empty(getFinancialSettings("hide_disabled_payment_gateways")))
@@ -125,11 +104,7 @@
 
             <div class="d-flex align-items-center justify-content-between mt-45">
                 <span class="font-16 font-weight-500 text-gray">{{ trans('financial.total_amount') }} {{ handlePrice($total) }}</span>
-<<<<<<< HEAD
-                <button type="button" id="paymentSubmit" disabled class="btn btn-sm btn-primary">{{ trans('public.start_payment') }}</button>
-=======
                 <button type="button" id="paymentSubmit" class="btn btn-sm btn-primary">{{ trans('public.start_payment') }}</button>
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             </div>
         </form>
 

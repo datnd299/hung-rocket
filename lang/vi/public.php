@@ -78,11 +78,7 @@ return [
     'date_created' => 'Ngày tạo',
     'partner_instructor' => 'Partner Instructor',
     'subscribe' => 'Đăng ký',
-<<<<<<< HEAD
-    'add_to_cart' => 'Add to Cart',
-=======
     'add_to_cart' => 'Thêm vào giỏ hàng',
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
     'add_to_calendar' => 'Add to Calendar',
     'add_to' => 'Add to',
     'reminder' => 'Reminder',
@@ -292,11 +288,7 @@ return [
     'creator' => 'Người tạo',
     'manual' => 'Manual',
     'automatic' => 'Tự động',
-<<<<<<< HEAD
-    'start_payment' => 'Start Payment',
-=======
     'start_payment' => 'Thanh toán',
->>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
     'pay' => 'Thanh toán',
     'saturday' => 'Saturday',
     'sunday' => 'Sunday',
