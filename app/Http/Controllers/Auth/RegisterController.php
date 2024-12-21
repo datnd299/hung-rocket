@@ -308,10 +308,13 @@ class RegisterController extends Controller
             if ($response = $this->registered($request, $user)) {
                 return $response;
             }
-
+            $to = $this->redirectPath();
+            if (session()->has('last_see_course_url')) {
+                $to = session()->get('last_see_course_url');
+            }
             return $request->wantsJson()
                 ? new JsonResponse([], 201)
-                : redirect($this->redirectPath());
+                : redirect($to);
         }
     }
 

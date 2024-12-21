@@ -533,11 +533,11 @@
 
 
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('panel_financial_charge_account')): ?>
-                            <li class="mt-5 <?php echo e((request()->is('panel/financial/account')) ? 'active' : ''); ?>">
-                                <a href="/panel/financial/account"><?php echo e(trans('financial.charge_account')); ?></a>
-                            </li>
-                        <?php endif; ?>
+
+
+
+
+
 
 
 

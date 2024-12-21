@@ -5,30 +5,32 @@
 <?php
 $videoDemos = [
     [
-        'name' => 'Video 1',
-        'desc' => 'Ai đang làm việc 1',
+        'name' => 'Trí tuệ nhân tạo không chỉ là công cụ, mà là cánh cửa mở ra tiềm năng vô hạn của con người.',
+        'desc' => '',
         'source' => '/assets/a1.jpg',
         'type' => 'image'
     ],
     [
-        'name' => 'Video 2',
-        'desc' => 'Ai đang làm việc 2',
-        'source' => '/assets/a2.jpg',
+        'name' => 'AI không thay thế con người, mà khuếch đại sức mạnh tư duy và khả năng sáng tạo của chúng ta.',
+        'desc' => '',
+        'source' => '/assets/a6.jpg',
         'type' => 'image'
     ],
     [
-        'name' => 'Video 3',
-        'desc' => 'Ai đang làm việc 3',
+        'name' => 'Trong thời đại AI, giới hạn duy nhất là trí tưởng tượng của chúng ta.',
+        'desc' => '',
         'source' => '/assets/a3.jpg',
         'type' => 'image'
     ],
     [
-        'name' => 'Video 3',
-        'desc' => 'Ai đang làm việc 3',
+        'name' => 'Sức mạnh thực sự của AI nằm ở khả năng biến dữ liệu thành tri thức và tri thức thành hành động.',
+        'desc' => '',
         'source' => '/assets/a4.jpg',
         'type' => 'image'
     ]
 ];
+$fanpageUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
+$contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 ?>
 
 <?php $__env->startSection('content'); ?>
@@ -58,7 +60,7 @@ $videoDemos = [
                 <?php if($heroSection == "2"): ?>
                     <div class="row slider-content align-items-center hero-section2 flex-column-reverse flex-md-row">
                         <div class="col-12 col-md-6 col-lg-5">
-                            <h1 class="text-secondary font-weight-bold">Biến AI thành tay sai của bạn</h1>
+                            <h1 class="text-gray font-weight-bold">Biến AI thành tay sai của bạn</h1>
                             <p class="slide-hint text-gray mt-20">Chào mừng bạn đến với Hưng AI Creative – nơi biến đam mê thành sức mạnh sáng tạo vượt bậc! Học cách làm chủ AI, tạo video siêu ấn tượng, tăng năng suất tối đa và bứt phá từ nghiệp dư thành chuyên gia. Tự tay tạo ra những content triệu view, chinh phục mọi xu hướng!</p>
 
 
@@ -102,7 +104,7 @@ $videoDemos = [
     <?php echo $__env->make('web.default.pages.includes.home_statistics', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
     <section class="home-sections home-sections-swiper container mt-0">
         <div class="px-20 px-md-0">
-            <h2 class="section-title">Dự án của tôi</h2>
+            <h2 class="section-title">Cùng tôi chinh phục AI</h2>
         </div>
 
         <div class="feature-slider-container position-relative d-flex justify-content-center mt-10">
@@ -113,7 +115,7 @@ $videoDemos = [
                             <div class="h-100">
                                 <div class="feature-slider d-flex h-100" <?php if($videoDemo['type'] == 'image'): ?> style="background-image: url('<?php echo e($videoDemo['source']); ?>')" <?php endif; ?>">
 
-                                    <div class="p-5 p-md-25 feature-slider-card" style="width: 435px; height: 300px">
+                                    <div class="p-5 p-md-25 feature-slider-card card-ai-hint" style="width: 435px" >
                                         <div class="d-flex flex-column feature-slider-body position-relative h-200">
                                             <div>
                                                 <h3 class="card-title mt-1"><?php echo e($videoDemo['name']); ?></h3>
@@ -706,7 +708,7 @@ $videoDemos = [
 
                             <div class="mt-35 d-flex align-items-center">
                                 <?php if(!empty($findInstructorSection['button1']) and !empty($findInstructorSection['button1']['title']) and !empty($findInstructorSection['button1']['link'])): ?>
-                                    <a href="<?php echo e($findInstructorSection['button1']['link']); ?>" class="btn btn-primary mr-15">Liên hệ ngay</a>
+                                    <a href="<?php echo e($contactNowUrl); ?>" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
                                 <?php endif; ?>
 
 
@@ -843,7 +845,7 @@ $videoDemos = [
 
                             <div class="mt-35 d-flex align-items-center">
                                 <?php if(!empty($forumSection['button1']) and !empty($forumSection['button1']['title']) and !empty($forumSection['button1']['link'])): ?>
-                                    <a href="<?php echo e($forumSection['button1']['link']); ?>" class="btn btn-primary mr-15">Liên hệ ngay</a>
+                                    <a href="<?php echo e($contactNowUrl); ?>" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
                                 <?php endif; ?>
 
 
@@ -859,15 +861,16 @@ $videoDemos = [
         <?php if($homeSection->name == \App\Models\HomeSection::$video_or_image_section and !empty($boxVideoOrImage)): ?>
             <section class="home-sections home-sections-swiper position-relative">
                 <div class="home-video-mask"></div>
-                <div class="container home-video-container d-flex flex-column align-items-center justify-content-center position-relative" style="background-image: url('/assets/bg3.jpg'">
+                    <div class="container position-relative videoWrapper">
+
 
 
 
                     <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/F7Mof11BdGk?si=jPaQlFPpv2zb_BPu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="mt-50 pt-10 text-center">
-                        <h2 class="home-video-title"><?php echo e($boxVideoOrImage['title'] ?? ''); ?></h2>
-                        <p class="home-video-hint mt-10"><?php echo e($boxVideoOrImage['description'] ?? ''); ?></p>
-                    </div>
+
+
+
+
                 </div>
             </section>
         <?php endif; ?>

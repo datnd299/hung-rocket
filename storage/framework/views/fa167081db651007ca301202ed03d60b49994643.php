@@ -44,7 +44,7 @@
                 <div class="avatar bg-gray200">
                     <img src="<?php echo e($webinar->teacher->getAvatar()); ?>" class="img-cover" alt="<?php echo e($webinar->teacher->full_name); ?>">
                 </div>
-                <a href="<?php echo e($webinar->teacher->getProfileUrl()); ?>" target="_blank" class="user-name ml-5 font-14"><?php echo e($webinar->teacher->full_name); ?></a>
+                <span href="<?php echo e($webinar->teacher->getProfileUrl()); ?>" target="_blank" class="user-name ml-5 font-14"><?php echo e($webinar->teacher->full_name); ?></span>
             </div>
 
             <a href="<?php echo e($webinar->getUrl()); ?>">
@@ -76,12 +76,21 @@
                     <span class="text-warning real font-14"><?php echo e($webinar->points); ?> <?php echo e(trans('update.points')); ?></span>
                 <?php elseif(!empty($webinar->price) and $webinar->price > 0): ?>
                     <?php if($webinar->bestTicket() < $webinar->price): ?>
+                        <?php if($webinar->original_price): ?>
+                            <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                        <?php endif; ?>
                         <span class="real"><?php echo e(handlePrice($webinar->bestTicket(), true, true, false, null, true)); ?></span>
                         <span class="off ml-10"><?php echo e(handlePrice($webinar->price, true, true, false, null, true)); ?></span>
                     <?php else: ?>
+                        <?php if($webinar->original_price): ?>
+                            <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                        <?php endif; ?>
                         <span class="real"><?php echo e(handlePrice($webinar->price, true, true, false, null, true)); ?></span>
                     <?php endif; ?>
                 <?php else: ?>
+                    <?php if($webinar->original_price): ?>
+                        <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                    <?php endif; ?>
                     <span class="real font-14"><?php echo e(trans('public.free')); ?></span>
                 <?php endif; ?>
             </div>

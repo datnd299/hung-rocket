@@ -77,11 +77,20 @@
                 <?php if(!empty($webinar->price) and $webinar->price > 0): ?>
                     <?php if($webinar->bestTicket() < $webinar->price): ?>
                         <span class="off"><?php echo e(handlePrice($webinar->price, true, true, false, null, true)); ?></span>
+                        <?php if($webinar->original_price): ?>
+                            <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                        <?php endif; ?>
                         <span class="real"><?php echo e(handlePrice($webinar->bestTicket(), true, true, false, null, true)); ?></span>
                     <?php else: ?>
+                        <?php if($webinar->original_price): ?>
+                            <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                        <?php endif; ?>
                         <span class="real"><?php echo e(handlePrice($webinar->price, true, true, false, null, true)); ?></span>
                     <?php endif; ?>
                 <?php else: ?>
+                    <?php if($webinar->original_price): ?>
+                        <span class="origin text-danger text-decoration-line-through"><?php echo e(handlePrice($webinar->original_price, true, true, false, null, true)); ?></span>
+                    <?php endif; ?>
                     <span class="real font-14"><?php echo e(trans('public.free')); ?></span>
                 <?php endif; ?>
             </div>

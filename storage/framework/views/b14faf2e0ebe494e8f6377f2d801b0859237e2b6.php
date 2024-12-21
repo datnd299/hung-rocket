@@ -45,6 +45,31 @@ unset($__errorArgs, $__bag); ?>
         </div>
 
         <div class="form-group mt-15">
+            <label class="input-label">Giá gốc (<?php echo e($currency); ?>)</label>
+            <input type="number" name="original_price" value="<?php echo e((!empty($webinar) and !empty($webinar->original_price)) ? convertPriceToUserCurrency($webinar->original_price) : old('original_price')); ?>" class="form-control <?php $__errorArgs = ['original_price'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>  is-invalid <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>"/>
+            <?php $__errorArgs = ['original_price'];
+$__bag = $errors->getBag($__errorArgs[1] ?? 'default');
+if ($__bag->has($__errorArgs[0])) :
+if (isset($message)) { $__messageOriginal = $message; }
+$message = $__bag->first($__errorArgs[0]); ?>
+            <div class="invalid-feedback">
+                <?php echo e($message); ?>
+
+            </div>
+            <?php unset($message);
+if (isset($__messageOriginal)) { $message = $__messageOriginal; }
+endif;
+unset($__errorArgs, $__bag); ?>
+        </div>
+
+        <div class="form-group mt-15">
             <label class="input-label"><?php echo e(trans('public.price')); ?> (<?php echo e($currency); ?>)</label>
             <input type="number" name="price" value="<?php echo e((!empty($webinar) and !empty($webinar->price)) ? convertPriceToUserCurrency($webinar->price) : old('price')); ?>" class="form-control <?php $__errorArgs = ['price'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');

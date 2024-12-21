@@ -533,11 +533,11 @@
 {{--                            </li>--}}
 {{--                        @endcan--}}
 
-                        @can('panel_financial_charge_account')
-                            <li class="mt-5 {{ (request()->is('panel/financial/account')) ? 'active' : '' }}">
-                                <a href="/panel/financial/account">{{ trans('financial.charge_account') }}</a>
-                            </li>
-                        @endcan
+{{--                        @can('panel_financial_charge_account')--}}
+{{--                            <li class="mt-5 {{ (request()->is('panel/financial/account')) ? 'active' : '' }}">--}}
+{{--                                <a href="/panel/financial/account">{{ trans('financial.charge_account') }}</a>--}}
+{{--                            </li>--}}
+{{--                        @endcan--}}
 
 {{--                        @can('panel_financial_subscribes')--}}
 {{--                            <li class="mt-5 {{ (request()->is('panel/financial/subscribes')) ? 'active' : '' }}">--}}

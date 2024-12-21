@@ -98,48 +98,48 @@
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_bundles')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/bundles*', false)) and !request()->is(getAdminPanelUrl('/bundles/comments*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-cube"></i>
-                        <span><?php echo e(trans('update.bundles')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_bundles_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/bundles', false)) and request()->get('type') == 'course') ? 'active' : ''); ?>">
-                                <a href="<?php echo e(getAdminPanelUrl()); ?>/bundles" class="nav-link <?php if(!empty($sidebarBeeps['bundles']) and $sidebarBeeps['bundles']): ?> beep beep-sidebar <?php endif; ?>"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_bundles_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/bundles/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/bundles/create"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_upcoming_courses')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/upcoming_courses*', false)) and !request()->is(getAdminPanelUrl('/upcoming_courses/comments*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-calendar"></i>
-                        <span><?php echo e(trans('update.upcoming_courses')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_upcoming_courses_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/upcoming_courses', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/upcoming_courses')); ?>"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_upcoming_courses_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/upcoming_courses/new', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/upcoming_courses/new')); ?>"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                    </ul>
-                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_quizzes')): ?>
@@ -152,117 +152,117 @@
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_certificate')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/certificates*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-certificate"></i>
-                        <span><?php echo e(trans('admin/main.certificates')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_certificate_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/certificates', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/certificates"><?php echo e(trans('update.quizzes_related')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_course_certificate_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/certificates/course-competition', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/certificates/course-competition"><?php echo e(trans('update.course_certificates')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_certificate_template_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/certificates/templates', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link"
-                                   href="<?php echo e(getAdminPanelUrl()); ?>/certificates/templates"><?php echo e(trans('admin/main.certificates_templates')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_certificate_template_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/certificates/templates/new', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link"
-                                   href="<?php echo e(getAdminPanelUrl()); ?>/certificates/templates/new"><?php echo e(trans('admin/main.new_template')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_certificate_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/certificates/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link"
-                                   href="<?php echo e(getAdminPanelUrl()); ?>/certificates/settings"><?php echo e(trans('admin/main.setting')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinar_assignments')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/assignments', false))) ? 'active' : ''); ?>">
-                    <a href="<?php echo e(getAdminPanelUrl()); ?>/assignments" class="nav-link">
-                        <i class="fas fa-pen"></i>
-                        <span><?php echo e(trans('update.assignments')); ?></span>
-                    </a>
-                </li>
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_course_question_forum_list')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/webinars/course_forums', false))) ? 'active' : ''); ?>">
-                    <a class="nav-link " href="<?php echo e(getAdminPanelUrl()); ?>/webinars/course_forums">
-                        <i class="fas fa-comment-alt"></i>
-                        <span><?php echo e(trans('update.course_forum')); ?></span>
-                    </a>
-                </li>
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_course_noticeboards_list')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/course-noticeboards*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-clipboard-check"></i>
-                        <span><?php echo e(trans('update.course_notices')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_course_noticeboards_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/course-noticeboards', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/course-noticeboards"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_course_noticeboards_send')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/course-noticeboards/send', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/course-noticeboards/send"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_enrollment')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/enrollments*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-user-plus"></i>
-                        <span><?php echo e(trans('update.enrollment')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_enrollment_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/enrollments/history', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/enrollments/history"><?php echo e(trans('public.history')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_enrollment_add_student_to_items')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/enrollments/add-student-to-class', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/enrollments/add-student-to-class"><?php echo e(trans('update.add_student_to_a_class')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_waitlists_lists')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/waitlists', false))) ? 'active' : ''); ?>">
-                    <a href="<?php echo e(getAdminPanelUrl("/waitlists")); ?>" class="nav-link">
-                        <i class="fas fa-user-graduate"></i>
-                        <span><?php echo e(trans('update.waitlists')); ?></span>
-                    </a>
-                </li>
+
+
+
+
+
+
             <?php endif; ?>
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_categories')): ?>
@@ -326,29 +326,29 @@
 
 
 
-            <?php if($authUser->can('admin_consultants_lists') or
-                $authUser->can('admin_appointments_lists')
-            ): ?>
-                <li class="menu-header"><?php echo e(trans('site.appointments')); ?></li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_consultants_lists')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/consultants', false))) ? 'active' : ''); ?>">
-                    <a href="<?php echo e(getAdminPanelUrl()); ?>/consultants" class="nav-link">
-                        <i class="fas fa-id-card"></i>
-                        <span><?php echo e(trans('admin/main.consultants')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_appointments_lists')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/appointments', false))) ? 'active' : ''); ?>">
-                    <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/appointments">
-                        <i class="fas fa-address-book"></i>
-                        <span><?php echo e(trans('admin/main.appointments')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if($authUser->can('admin_users') or
                 $authUser->can('admin_roles') or
@@ -405,13 +405,13 @@
             <?php endif; ?>
 
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_users_not_access_content_lists')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/users/not-access-to-content', false))) ? 'active' : ''); ?>">
-                    <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/users/not-access-to-content">
-                        <i class="fas fa-user-lock"></i> <span><?php echo e(trans('update.not_access_to_content')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_roles')): ?>
                 <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/roles*', false))) ? 'active' : ''); ?>">
@@ -465,319 +465,319 @@
 
 
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_become_instructors_list')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/users/become-instructors*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-list-alt"></i>
-                        <span><?php echo e(trans('admin/main.instructor_requests')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="<?php echo e((request()->is(getAdminPanelUrl('/users/become-instructors/instructors', false))) ? 'active' : ''); ?>">
-                            <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/users/become-instructors/instructors">
-                                <span><?php echo e(trans('admin/main.instructors')); ?></span>
-                            </a>
-                        </li>
-
-                        <li class="<?php echo e((request()->is(getAdminPanelUrl('/users/become-instructors/organizations', false))) ? 'active' : ''); ?>">
-                            <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/users/become-instructors/organizations">
-                                <span><?php echo e(trans('admin/main.organizations')); ?></span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            <?php endif; ?>
-
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_delete_account_requests')): ?>
-                <li class="nav-item <?php echo e((request()->is(getAdminPanelUrl('/users/delete-account-requests*', false))) ? 'active' : ''); ?>">
-                    <a href="<?php echo e(getAdminPanelUrl()); ?>/users/delete-account-requests" class="nav-link">
-                        <i class="fa fa-user-times"></i>
-                        <span><?php echo e(trans('update.delete-account-requests')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
-
-            <?php if($authUser->can("admin_user_login_history") or $authUser->can("admin_user_ip_restriction")): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/users/login-history*', false)) or request()->is(getAdminPanelUrl('/users/ip-restriction*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-user-clock"></i>
-                        <span><?php echo e(trans('update.ip_management')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_user_login_history')): ?>
-                            <li class="nav-item <?php echo e((request()->is(getAdminPanelUrl('/users/login-history*', false))) ? 'active' : ''); ?>">
-                                <a href="<?php echo e(getAdminPanelUrl()); ?>/users/login-history" class="nav-link">
-                                    <span><?php echo e(trans('update.login_history')); ?></span>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_user_ip_restriction')): ?>
-                            <li class="nav-item <?php echo e((request()->is(getAdminPanelUrl('/users/ip-restriction*', false))) ? 'active' : ''); ?>">
-                                <a href="<?php echo e(getAdminPanelUrl()); ?>/users/ip-restriction" class="nav-link">
-                                    <span><?php echo e(trans('update.ip_restriction')); ?></span>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
 
-            <?php if(
-                $authUser->can('admin_forum') or
-                $authUser->can('admin_featured_topics')
-                ): ?>
-                <li class="menu-header"><?php echo e(trans('update.forum')); ?></li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_forum')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/forums*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-comment-dots"></i>
-                        <span><?php echo e(trans('update.forums')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_forum_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/forums', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/forums"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_forum_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/forums/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/forums/create"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_featured_topics')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/featured-topics*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-comment"></i>
-                        <span><?php echo e(trans('update.featured_topics')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_featured_topics_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/featured-topics', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/featured-topics"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_featured_topics_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/featured-topics/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/featured-topics/create"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_recommended_topics')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/recommended-topics*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-thumbs-up"></i>
-                        <span><?php echo e(trans('update.recommended_topics')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_recommended_topics_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/recommended-topics', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/recommended-topics"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_recommended_topics_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/recommended-topics/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/recommended-topics/create"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if($authUser->can('admin_supports') or
-                $authUser->can('admin_comments') or
-                $authUser->can('admin_reports') or
-                $authUser->can('admin_contacts') or
-                $authUser->can('admin_noticeboards') or
-                $authUser->can('admin_notifications')
-            ): ?>
-                <li class="menu-header"><?php echo e(trans('admin/main.crm')); ?></li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_supports')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/supports*', false)) and request()->get('type') != 'course_conversations') ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-headphones"></i>
-                        <span><?php echo e(trans('admin/main.supports')); ?></span>
-                    </a>
 
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_supports_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/supports', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/supports"><?php echo e(trans('public.tickets')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_support_send')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/supports/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/supports/create"><?php echo e(trans('admin/main.new_ticket')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_support_departments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/supports/departments', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/supports/departments"><?php echo e(trans('admin/main.departments')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
 
-                <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_support_course_conversations')): ?>
-                    <li class="<?php echo e((request()->is(getAdminPanelUrl('/supports*', false)) and request()->get('type') == 'course_conversations') ? 'active' : ''); ?>">
-                        <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/supports?type=course_conversations">
-                            <i class="fas fa-envelope-square"></i>
-                            <span><?php echo e(trans('admin/main.classes_conversations')); ?></span>
-                        </a>
-                    </li>
-                <?php endif; ?>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_comments')): ?>
-                <li class="nav-item dropdown <?php echo e((!request()->is(getAdminPanelUrl('admin/comments/products, false')) and (request()->is(getAdminPanelUrl('/comments*', false)) and !request()->is(getAdminPanelUrl('/comments/webinars/reports', false)))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-comments"></i> <span><?php echo e(trans('admin/main.comments')); ?></span></a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinar_comments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/webinars', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link <?php if(!empty($sidebarBeeps['classesComments']) and $sidebarBeeps['classesComments']): ?> beep beep-sidebar <?php endif; ?>" href="<?php echo e(getAdminPanelUrl()); ?>/comments/webinars"><?php echo e(trans('admin/main.classes_comments')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_bundle_comments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/bundles', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link <?php if(!empty($sidebarBeeps['bundleComments']) and $sidebarBeeps['bundleComments']): ?> beep beep-sidebar <?php endif; ?>" href="<?php echo e(getAdminPanelUrl()); ?>/comments/bundles"><?php echo e(trans('update.bundle_comments')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_blog_comments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/blog', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link <?php if(!empty($sidebarBeeps['blogComments']) and $sidebarBeeps['blogComments']): ?> beep beep-sidebar <?php endif; ?>" href="<?php echo e(getAdminPanelUrl()); ?>/comments/blog"><?php echo e(trans('admin/main.blog_comments')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_product_comments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/products', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link <?php if(!empty($sidebarBeeps['productComments']) and $sidebarBeeps['productComments']): ?> beep beep-sidebar <?php endif; ?>" href="<?php echo e(getAdminPanelUrl()); ?>/comments/products"><?php echo e(trans('update.product_comments')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_reports')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/reports*', false)) or request()->is(getAdminPanelUrl('/comments/webinars/reports', false)) or request()->is(getAdminPanelUrl('/comments/blog/reports', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-info-circle"></i> <span><?php echo e(trans('admin/main.reports')); ?></span></a>
 
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinar_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/reports/webinars', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/reports/webinars"><?php echo e(trans('panel.classes')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_webinar_comments_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/webinars/reports', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/comments/webinars/reports"><?php echo e(trans('admin/main.classes_comments_reports')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_blog_comments_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/blog/reports', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/comments/blog/reports"><?php echo e(trans('admin/main.blog_comments_reports')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_report_reasons')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/reports/reasons', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/reports/reasons"><?php echo e(trans('admin/main.report_reasons')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_forum_topic_post_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/reports/forum-topics', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/reports/forum-topics"><?php echo e(trans('update.forum_topics')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_contacts')): ?>
-                <li class="<?php echo e((request()->is(getAdminPanelUrl('/contacts*', false))) ? 'active' : ''); ?>">
-                    <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/contacts">
-                        <i class="fas fa-phone-square"></i>
-                        <span><?php echo e(trans('admin/main.contacts')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_noticeboards')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/noticeboards*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-sticky-note"></i> <span><?php echo e(trans('admin/main.noticeboard')); ?></span></a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_noticeboards_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/noticeboards', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/noticeboards"><?php echo e(trans('admin/main.lists')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_noticeboards_send')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/noticeboards/send', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/noticeboards/send"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/notifications*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-bell"></i>
-                        <span><?php echo e(trans('admin/main.notifications')); ?></span>
-                    </a>
 
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/notifications', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/notifications"><?php echo e(trans('public.history')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications_posted_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/notifications/posted', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/notifications/posted"><?php echo e(trans('admin/main.posted')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications_send')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/notifications/send', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/notifications/send"><?php echo e(trans('admin/main.new')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications_templates')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/notifications/templates', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/notifications/templates"><?php echo e(trans('admin/main.templates')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_notifications_template_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/notifications/templates/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/notifications/templates/create"><?php echo e(trans('admin/main.new_template')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if($authUser->can('admin_blog') or
                 $authUser->can('admin_pages') or
@@ -792,100 +792,100 @@
                 <li class="menu-header"><?php echo e(trans('admin/main.content')); ?></li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/store*', false)) or request()->is(getAdminPanelUrl('/comments/products*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-store-alt"></i>
-                        <span><?php echo e(trans('update.store')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_new_product')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/products/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/products/create"><?php echo e(trans('update.new_product')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_products')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/products', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/products"><?php echo e(trans('update.products')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_in_house_products')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/in-house-products', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/in-house-products"><?php echo e(trans('update.in-house-products')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_products_orders')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/orders', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/orders"><?php echo e(trans('update.orders')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_in_house_orders')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/in-house-orders', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/in-house-orders"><?php echo e(trans('update.in-house-orders')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_products_sellers')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/sellers', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/sellers"><?php echo e(trans('update.sellers')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_categories_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/categories', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/categories"><?php echo e(trans('admin/main.categories')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_filters_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/filters', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/filters"><?php echo e(trans('update.filters')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_specifications')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/specifications', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/specifications"><?php echo e(trans('update.specifications')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_discounts')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/discounts', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/discounts"><?php echo e(trans('admin/main.discounts')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_products_comments')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/products*', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/comments/products"><?php echo e(trans('admin/main.comments')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_products_comments_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/comments/products/reports', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/comments/products/reports"><?php echo e(trans('admin/main.comments_reports')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_products_reviews')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/reviews', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/reviews"><?php echo e(trans('admin/main.reviews')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_store_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/store/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/store/settings"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_blog')): ?>
                 <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/blog*', false)) and !request()->is(getAdminPanelUrl('/blog/comments', false))) ? 'active' : ''); ?>">
@@ -1151,189 +1151,189 @@
                 </li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_payouts')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/payouts*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-credit-card"></i> <span><?php echo e(trans('admin/main.payout')); ?></span></a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_payouts_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/payouts', false)) and request()->get('payout') == 'requests') ? 'active' : ''); ?>">
-                                <a href="<?php echo e(getAdminPanelUrl()); ?>/financial/payouts?payout=requests" class="nav-link <?php if(!empty($sidebarBeeps['payoutRequest']) and $sidebarBeeps['payoutRequest']): ?> beep beep-sidebar <?php endif; ?>">
-                                    <span><?php echo e(trans('panel.requests')); ?></span>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_payouts_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/payouts', false)) and request()->get('payout') == 'history') ? 'active' : ''); ?>">
-                                <a href="<?php echo e(getAdminPanelUrl()); ?>/financial/payouts?payout=history" class="nav-link">
-                                    <span><?php echo e(trans('public.history')); ?></span>
-                                </a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
-
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_offline_payments_list')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/offline_payments*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown"><i class="fas fa-university"></i> <span><?php echo e(trans('admin/main.offline_payments')); ?></span></a>
-                    <ul class="dropdown-menu">
-                        <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/offline_payments', false)) and request()->get('page_type') == 'requests') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(getAdminPanelUrl()); ?>/financial/offline_payments?page_type=requests" class="nav-link <?php if(!empty($sidebarBeeps['offlinePayments']) and $sidebarBeeps['offlinePayments']): ?> beep beep-sidebar <?php endif; ?>">
-                                <span><?php echo e(trans('panel.requests')); ?></span>
-                            </a>
-                        </li>
-
-                        <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/offline_payments', false)) and request()->get('page_type') == 'history') ? 'active' : ''); ?>">
-                            <a href="<?php echo e(getAdminPanelUrl()); ?>/financial/offline_payments?page_type=history" class="nav-link">
-                                <span><?php echo e(trans('public.history')); ?></span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            <?php endif; ?>
-
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_subscribe')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/subscribes*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-cart-plus"></i>
-                        <span><?php echo e(trans('admin/main.subscribes')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_subscribe_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/subscribes', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/subscribes"><?php echo e(trans('admin/main.packages')); ?></a>
-                            </li>
-                        <?php endif; ?>
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_subscribe_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/subscribes/new', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/subscribes/new"><?php echo e(trans('admin/main.new_package')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_rewards')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/rewards*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fa fa-gift"></i>
-                        <span><?php echo e(trans('update.rewards')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_rewards_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/rewards', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/rewards"><?php echo e(trans('public.history')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_rewards_items')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/rewards/items', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/rewards/items"><?php echo e(trans('update.conditions')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_rewards_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/rewards/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/rewards/settings"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_packages')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/registration-packages*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fa fa-gem"></i>
-                        <span><?php echo e(trans('update.registration_packages')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_packages_lists')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/registration-packages', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/registration-packages"><?php echo e(trans('admin/main.packages')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_packages_new')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/registration-packages/new', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/registration-packages/new"><?php echo e(trans('admin/main.new_package')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_packages_reports')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/registration-packages/reports', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/registration-packages/reports"><?php echo e(trans('admin/main.reports')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_packages_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/registration-packages/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl()); ?>/financial/registration-packages/settings"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/installments*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fa fa-money-bill-wave"></i>
-                        <span><?php echo e(trans('update.installments')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_create')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/create')); ?>"><?php echo e(trans('update.new_plan')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_list')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments')); ?>"><?php echo e(trans('update.plans')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_purchases')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/purchases', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/purchases')); ?>"><?php echo e(trans('update.purchases')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_overdue_lists')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/overdue', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/overdue')); ?>"><?php echo e(trans('update.overdue')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_overdue_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/overdue_history', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/overdue_history')); ?>"><?php echo e(trans('update.overdue_history')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_verification_requests')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/verification_requests', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/verification_requests')); ?>"><?php echo e(trans('update.verification_requests')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_verified_users')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/verified_users', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/verified_users')); ?>"><?php echo e(trans('update.verified_users')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_installments_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/financial/installments/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/financial/installments/settings')); ?>"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if($authUser->can('admin_discount_codes') or
                 $authUser->can('admin_cart_discount') or
@@ -1381,14 +1381,14 @@
                 </li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cart_discount_controls')): ?>
-                <li class="nav-item <?php echo e((request()->is(getAdminPanelUrl('/cart_discount*', false))) ? 'active' : ''); ?>">
-                    <a href="<?php echo e(getAdminPanelUrl()); ?>/cart_discount" class="nav-link">
-                        <i class="fa fa-percentage"></i>
-                        <span><?php echo e(trans('update.cart_discount')); ?></span>
-                    </a>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_product_discount')): ?>
                 <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/special_offers*', false))) ? 'active' : ''); ?>">
@@ -1412,38 +1412,38 @@
                 </li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_abandoned_cart')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/abandoned-cart*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fa fa-cart-plus"></i>
-                        <span><?php echo e(trans('update.abandoned_cart')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_abandoned_cart_rules')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/abandoned-cart/rules/create', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/abandoned-cart/rules/create")); ?>"><?php echo e(trans('update.new_rule')); ?></a>
-                            </li>
 
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/abandoned-cart/rules', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/abandoned-cart/rules")); ?>"><?php echo e(trans('update.rules')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_abandoned_cart_users')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/abandoned-cart/users-carts', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/abandoned-cart/users-carts")); ?>"><?php echo e(trans('update.users_carts')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_abandoned_cart_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/abandoned-cart/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/abandoned-cart/settings")); ?>"><?php echo e(trans('update.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_feature_webinars')): ?>
                 <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/webinars/features*', false))) ? 'active' : ''); ?>">
@@ -1467,61 +1467,61 @@
                 </li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cashback')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/cashback*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-wallet"></i>
-                        <span><?php echo e(trans('update.cashback')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cashback_rules')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/cashback/rules/new', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/cashback/rules/new')); ?>"><?php echo e(trans('update.new_rule')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cashback_rules')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/cashback/rules', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/cashback/rules')); ?>"><?php echo e(trans('update.rules')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cashback_transactions')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/cashback/transactions', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/cashback/transactions')); ?>"><?php echo e(trans('update.transactions')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_cashback_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/cashback/history', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/cashback/history')); ?>"><?php echo e(trans('update.history')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                    </ul>
-                </li>
-            <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_gift')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/gifts*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fas fa-gift"></i>
-                        <span><?php echo e(trans('update.gifts')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_gift_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/gifts', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/gifts")); ?>"><?php echo e(trans('public.history')); ?></a>
-                            </li>
-                        <?php endif; ?>
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_gift_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/gifts/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl("/gifts/settings")); ?>"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_promotion')): ?>
                 <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/financial/promotions*', false))) ? 'active' : ''); ?>">
@@ -1622,30 +1622,30 @@
                 </li>
             <?php endif; ?>
 
-            <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_bonus')): ?>
-                <li class="nav-item dropdown <?php echo e((request()->is(getAdminPanelUrl('/registration_bonus*', false))) ? 'active' : ''); ?>">
-                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-                        <i class="fa fa-gem"></i>
-                        <span><?php echo e(trans('update.registration_bonus')); ?></span>
-                    </a>
-                    <ul class="dropdown-menu">
-
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_bonus_history')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/registration_bonus/history', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/registration_bonus/history')); ?>"><?php echo e(trans('update.bonus_history')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
 
-                        <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_registration_bonus_settings')): ?>
-                            <li class="<?php echo e((request()->is(getAdminPanelUrl('/registration_bonus/settings', false))) ? 'active' : ''); ?>">
-                                <a class="nav-link" href="<?php echo e(getAdminPanelUrl('/registration_bonus/settings')); ?>"><?php echo e(trans('admin/main.settings')); ?></a>
-                            </li>
-                        <?php endif; ?>
 
-                    </ul>
-                </li>
-            <?php endif; ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <?php if (app(\Illuminate\Contracts\Auth\Access\Gate::class)->check('admin_advertising_modal_config')): ?>
                 <li class="nav-item <?php echo e((request()->is(getAdminPanelUrl('/advertising_modal*', false))) ? 'active' : ''); ?>">

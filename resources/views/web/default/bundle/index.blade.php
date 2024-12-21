@@ -347,7 +347,7 @@
 
                         <div class="d-flex flex-wrap mt-10">
                             @foreach($bundle->tags as $tag)
-                                <a href="/tags/bundles/{{ urlencode($tag->title) }}" class="tag-item bg-gray200 p-5 font-14 text-gray font-weight-500 rounded">{{ $tag->title }}</a>
+                                <a href="/tags/bundles/{{ urlencode($tag->title) }}" class="tag-item p-5 font-14 text-gray font-weight-500 rounded">{{ $tag->title }}</a>
                             @endforeach
                         </div>
                     </div>

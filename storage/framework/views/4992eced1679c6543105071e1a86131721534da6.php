@@ -41,7 +41,7 @@
                     <?php $__currentLoopData = $paymentChannels; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $paymentChannel): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <?php if(!$isMultiCurrency or (!empty($paymentChannel->currencies) and in_array($userCurrency, $paymentChannel->currencies))): ?>
                             <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-                                <input type="radio" name="gateway" id="<?php echo e($paymentChannel->title); ?>" data-class="<?php echo e($paymentChannel->class_name); ?>" value="<?php echo e($paymentChannel->id); ?>">
+                                <input <?php if(count($paymentChannels) == 1): ?> checked <?php endif; ?> type="radio" name="gateway" id="<?php echo e($paymentChannel->title); ?>" data-class="<?php echo e($paymentChannel->class_name); ?>" value="<?php echo e($paymentChannel->id); ?>">
                                 <label for="<?php echo e($paymentChannel->title); ?>" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
                                     <img src="<?php echo e($paymentChannel->image); ?>" width="120" height="60" alt="">
 
@@ -60,20 +60,19 @@
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 <?php endif; ?>
 
-                <div class="col-6 col-lg-4 mb-40 charge-account-radio">
-                    <input type="radio" <?php if(empty($userCharge) or ($total > $userCharge)): ?> disabled <?php endif; ?> name="gateway" id="offline" value="credit">
-                    <label for="offline" class="rounded-sm p-20 p-lg-45 d-flex flex-column align-items-center justify-content-center">
-                        <img src="/assets/default/img/activity/pay.svg" width="120" height="60" alt="">
 
-                        <p class="mt-30 mt-lg-50 font-weight-500 text-dark-blue">
-                            <?php echo e(trans('financial.account')); ?>
 
-                            <span class="font-weight-bold"><?php echo e(trans('financial.charge')); ?></span>
-                        </p>
 
-                        <span class="mt-5"><?php echo e(handlePrice($userCharge)); ?></span>
-                    </label>
-                </div>
+
+
+
+
+
+
+
+
+
+
             </div>
 
             <?php if(!empty($invalidChannels) and empty(getFinancialSettings("hide_disabled_payment_gateways"))): ?>
@@ -107,7 +106,7 @@
 
             <div class="d-flex align-items-center justify-content-between mt-45">
                 <span class="font-16 font-weight-500 text-gray"><?php echo e(trans('financial.total_amount')); ?> <?php echo e(handlePrice($total)); ?></span>
-                <button type="button" id="paymentSubmit" disabled class="btn btn-sm btn-primary"><?php echo e(trans('public.start_payment')); ?></button>
+                <button type="button" id="paymentSubmit" class="btn btn-sm btn-primary"><?php echo e(trans('public.start_payment')); ?></button>
             </div>
         </form>
 

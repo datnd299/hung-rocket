@@ -156,9 +156,16 @@ class PaymentController extends Controller
             ->where('status', 'active')
             ->first();
         $channelManager = ChannelManager::makeChannel($paymentChannel);
-        $order = $channelManager->verify($request);
+        try {
+            $order = $channelManager->verify($request);
 
-        return $this->paymentOrderAfterVerify($order);
+            return $this->paymentOrderAfterVerify($order);
+        } catch (\Exception $exception) {
+            report($exception);
+            return [
+                'exception' => $exception->getMessage(),
+            ];
+        }
     }
 
     /*

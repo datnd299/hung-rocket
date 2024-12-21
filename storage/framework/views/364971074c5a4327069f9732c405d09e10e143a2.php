@@ -175,7 +175,13 @@
                                     <div class="text-center">
                                         <?php
                                             $realPrice = handleCoursePagePrice($course->price);
+                                            $originalPrice = handleCoursePagePrice($course->original_price);
                                         ?>
+                                        <span id="originalPrice" data-value="<?php echo e($course->original_price); ?>"
+                                              class="d-block font-16 text-decoration-line-through font-30 text-danger">
+                                            <?php echo e($originalPrice['price']); ?>
+
+                                        </span>
                                         <span id="realPrice" data-value="<?php echo e($course->price); ?>"
                                               data-special-offer="<?php echo e(!empty($activeSpecialOffer) ? $activeSpecialOffer->percent : ''); ?>"
                                               class="d-block <?php if(!empty($activeSpecialOffer)): ?> font-16 text-gray text-decoration-line-through <?php else: ?> font-30 text-primary <?php endif; ?>">
@@ -508,7 +514,7 @@
 
                         <div class="d-flex flex-wrap mt-10">
                             <?php $__currentLoopData = $course->tags; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tag): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                <a href="/tags/courses/<?php echo e(urlencode($tag->title)); ?>" class="tag-item bg-gray200 p-5 font-14 text-gray font-weight-500 rounded"><?php echo e($tag->title); ?></a>
+                                <a href="/tags/courses/<?php echo e(urlencode($tag->title)); ?>" class="tag-item p-5 font-14 text-gray font-weight-500 rounded"><?php echo e($tag->title); ?></a>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </div>
                     </div>

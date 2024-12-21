@@ -23,7 +23,8 @@ body {
 }
 
 .learning-page .learning-page-navbar .learning-page-progress-card {
-  border-left: 1px solid #f1f1f1;
+  /*border-left: 1px solid #f1f1f1;*/
+    border-left: 1px solid var(--border-color);
   padding-left: 10px;
   margin-left: 10px;
 }
@@ -57,11 +58,12 @@ body {
   }
 }
 .learning-page .learning-page-navbar .learning-page-navbar-btn {
-  color: #343434;
-  background-color: #FFFFFF;
+  color: var(--text-color2);
+  background-color: var(--body_bg);
 }
 .learning-page .learning-page-navbar .learning-page-navbar-btn:hover {
-  background-color: #f1f1f1;
+  /*background-color: #f1f1f1;*/
+    background-color: var(--body_bg);
 }
 .learning-page .learning-page-navbar .learning-page-navbar-btn.noticeboard-btn {
   position: relative;
@@ -154,7 +156,8 @@ body {
   }
 }
 .learning-page .learning-page-tabs .tab-item.active, .learning-page .learning-page-tabs .certificate-item.active {
-  background-color: #f1f1f1;
+  /*background-color: #f1f1f1;*/
+    background-color: var(--surface-card);
 }
 .learning-page .learning-page-tabs .tab-item .tab-item-info, .learning-page .learning-page-tabs .certificate-item .tab-item-info {
   display: none;
@@ -162,7 +165,8 @@ body {
 .learning-page .learning-content {
   width: 100%;
   height: calc(100vh - 90px);
-  background-color: #FFFFFF;
+  /*background-color: #FFFFFF;*/
+    background-color: var(--surface-card);
   border-radius: 10px;
   overflow-y: auto;
 }

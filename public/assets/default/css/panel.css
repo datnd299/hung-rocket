@@ -178,7 +178,8 @@ $custom-control-indicator-bg:$primary;*/
   width: 254px;
   height: 100%;
   box-shadow: 18px 0 35px 0 rgba(0, 0, 0, 0.02);
-  background-color: #ffffff;
+  /*background-color: #ffffff;*/
+    background-color: var(--surface-card);
 }
 .rtl .panel-sidebar {
   left: auto;
@@ -222,7 +223,8 @@ $custom-control-indicator-bg:$primary;*/
   font-size: 16px;
   font-weight: 500;
   line-height: 1.2;
-  color: #171347;
+  /*color: #171347;*/
+    color: var(--secondary);
 }
 @media (max-width: 991px) {
   .panel-sidebar .user-info .user-name h3 {

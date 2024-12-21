@@ -18,7 +18,7 @@
                     </div>
                     <?php if($order->status != 'paid'): ?>
                         <div class="mt-2 d-flex justify-content-center">
-                            <img style="max-width: 300px; max-height: 300px;" src="<?php echo e($channel->getQrCodeSource($order)); ?>" alt="">
+                            <img style="max-width: 300px; max-height: 300px; background: white; padding: 5px;" src="<?php echo e($channel->getQrCodeSource($order)); ?>" alt="">
                         </div>
                         <div class="mt-2 d-flex align-items-center alert alert-info" role="alert">
                             <div class="mr-3">
