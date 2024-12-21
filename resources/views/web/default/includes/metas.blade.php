@@ -12,9 +12,21 @@
     <meta property="og:description" content="{{ (!empty($ogDescription)) ? $ogDescription : $pageDescription }}">
     <meta name='twitter:description' content='{{ (!empty($ogDescription)) ? $ogDescription : $pageDescription }}'>
 @endif
+<<<<<<< HEAD
 
 <link rel='shortcut icon' type='image/x-icon' href="{{ url(!empty($generalSettings['fav_icon']) ? $generalSettings['fav_icon'] : '') }}">
 <link rel="manifest" href="/mix-manifest.json?v=4">
+=======
+@php
+    $generalSettings['fav_icon'] = '/assets/fav.png'
+@endphp
+
+<link rel='shortcut icon' type='image/x-icon' href="{{ url(!empty($generalSettings['fav_icon']) ? $generalSettings['fav_icon'] : '') }}">
+<link rel="manifest" href="/mix-manifest.json?v=4">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
 <meta name="theme-color" content="#FFF">
 <!-- Windows Phone -->
 <meta name="msapplication-starturl" content="/">

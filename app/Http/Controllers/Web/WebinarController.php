@@ -334,7 +334,11 @@ class WebinarController extends Controller
         if ($justReturnData) {
             return $data;
         }
+<<<<<<< HEAD
 
+=======
+        session()->put('last_see_course_url', '/' . \request()->path());
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
         return view('web.default.course.index', $data);
     }
 

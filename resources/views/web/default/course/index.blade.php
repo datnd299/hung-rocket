@@ -172,7 +172,16 @@
                                     <div class="text-center">
                                         @php
                                             $realPrice = handleCoursePagePrice($course->price);
+<<<<<<< HEAD
                                         @endphp
+=======
+                                            $originalPrice = handleCoursePagePrice($course->original_price);
+                                        @endphp
+                                        <span id="originalPrice" data-value="{{ $course->original_price }}"
+                                              class="d-block font-16 text-decoration-line-through font-30 text-danger">
+                                            {{ $originalPrice['price'] }}
+                                        </span>
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                                         <span id="realPrice" data-value="{{ $course->price }}"
                                               data-special-offer="{{ !empty($activeSpecialOffer) ? $activeSpecialOffer->percent : ''}}"
                                               class="d-block @if(!empty($activeSpecialOffer)) font-16 text-gray text-decoration-line-through @else font-30 text-primary @endif">
@@ -492,7 +501,11 @@
 
                         <div class="d-flex flex-wrap mt-10">
                             @foreach($course->tags as $tag)
+<<<<<<< HEAD
                                 <a href="/tags/courses/{{ urlencode($tag->title) }}" class="tag-item bg-gray200 p-5 font-14 text-gray font-weight-500 rounded">{{ $tag->title }}</a>
+=======
+                                <a href="/tags/courses/{{ urlencode($tag->title) }}" class="tag-item p-5 font-14 text-gray font-weight-500 rounded">{{ $tag->title }}</a>
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                             @endforeach
                         </div>
                     </div>

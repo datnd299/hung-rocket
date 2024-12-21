@@ -39,10 +39,17 @@
             </div>
 
             <div class="footer-social">
+<<<<<<< HEAD
                 <a href="https://web.whatsapp.com/" target="_blank">
                     <img src="/store/1/default_images/social/whatsapp.svg" alt="Whatsapp" class="mr-15">
                 </a>
                 <a href="https://www.facebook.com/profile.php?id=100004474443371" target="_blank">
+=======
+                <a href="tel:0377028539" target="_blank">
+                    <img src="/store/1/default_images/social/whatsapp.svg" alt="Whatsapp" class="mr-15">
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61569987181492" target="_blank">
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                     <img src="/store/1/default_images/social/facebook.svg" alt="Facebook" class="mr-15">
                 </a>
             </div>
@@ -56,6 +63,7 @@
                     Hung AI Creative - Copyright 2024 all rights reserved
                 </div>
 
+<<<<<<< HEAD
                 <div class="d-flex align-items-center justify-content-center">
                     @if(!empty($generalSettings['site_phone']))
                         <div class="d-flex align-items-center text-white font-14">
@@ -73,6 +81,25 @@
                         </div>
                     @endif
                 </div>
+=======
+{{--                <div class="d-flex align-items-center justify-content-center">--}}
+{{--                    @if(!empty($generalSettings['site_phone']))--}}
+{{--                        <div class="d-flex align-items-center text-white font-14">--}}
+{{--                            <i data-feather="phone" width="20" height="20" class="mr-10"></i>--}}
+{{--                            {{ $generalSettings['site_phone'] }}--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+
+{{--                    @if(!empty($generalSettings['site_email']))--}}
+{{--                        <div class="border-left mx-5 mx-lg-15 h-100"></div>--}}
+
+{{--                        <div class="d-flex align-items-center text-white font-14">--}}
+{{--                            <i data-feather="mail" width="20" height="20" class="mr-10"></i>--}}
+{{--                            {{ $generalSettings['site_email'] }}--}}
+{{--                        </div>--}}
+{{--                    @endif--}}
+{{--                </div>--}}
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             </div>
         </div>
     @endif

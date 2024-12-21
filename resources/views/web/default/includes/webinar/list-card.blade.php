@@ -77,11 +77,28 @@
                 @if(!empty($webinar->price) and $webinar->price > 0)
                     @if($webinar->bestTicket() < $webinar->price)
                         <span class="off">{{ handlePrice($webinar->price, true, true, false, null, true) }}</span>
+<<<<<<< HEAD
                         <span class="real">{{ handlePrice($webinar->bestTicket(), true, true, false, null, true) }}</span>
                     @else
                         <span class="real">{{ handlePrice($webinar->price, true, true, false, null, true) }}</span>
                     @endif
                 @else
+=======
+                        @if($webinar->original_price)
+                            <span class="origin text-danger text-decoration-line-through">{{ handlePrice($webinar->original_price, true, true, false, null, true) }}</span>
+                        @endif
+                        <span class="real">{{ handlePrice($webinar->bestTicket(), true, true, false, null, true) }}</span>
+                    @else
+                        @if($webinar->original_price)
+                            <span class="origin text-danger text-decoration-line-through">{{ handlePrice($webinar->original_price, true, true, false, null, true) }}</span>
+                        @endif
+                        <span class="real">{{ handlePrice($webinar->price, true, true, false, null, true) }}</span>
+                    @endif
+                @else
+                    @if($webinar->original_price)
+                        <span class="origin text-danger text-decoration-line-through">{{ handlePrice($webinar->original_price, true, true, false, null, true) }}</span>
+                    @endif
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                     <span class="real font-14">{{ trans('public.free') }}</span>
                 @endif
             </div>

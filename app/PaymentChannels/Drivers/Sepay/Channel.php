@@ -57,11 +57,28 @@ class Channel implements IChannel
         $data = $request->all();
         $content = $data['content'];
         preg_match('/HUNGAI(\w*)/', $content, $matches);
+<<<<<<< HEAD
         $code = $matches[1];
         $order = Order::query()->where('reference_id', $code)->first();
         if ($order->status == Order::$paid) {
             throw new \Exception('Order already paid');
         }
+=======
+        if (empty($matches)) {
+            throw new \Exception('Not found order id');
+        }
+        $code = $matches[1];
+        $order = Order::query()->where('reference_id', $code)->first();
+        if (empty($order)) {
+            throw new \Exception('Not found order: ' . $code);
+        }
+        if ($order->status == Order::$paid) {
+            throw new \Exception('Order already paid');
+        }
+        if ($data['transferAmount'] < $order->amount) {
+            throw new \Exception('Not enough money transfer');
+        }
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
         $order->update(['status' => Order::$paying]);
         return $order;
 

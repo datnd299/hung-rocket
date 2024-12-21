@@ -30,6 +30,19 @@
         </div>
 
         <div class="form-group mt-15">
+<<<<<<< HEAD
+=======
+            <label class="input-label">Giá gốc ({{ $currency }})</label>
+            <input type="number" name="original_price" value="{{ (!empty($webinar) and !empty($webinar->original_price)) ? convertPriceToUserCurrency($webinar->original_price) : old('original_price') }}" class="form-control @error('original_price')  is-invalid @enderror"/>
+            @error('original_price')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
+        </div>
+
+        <div class="form-group mt-15">
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
             <label class="input-label">{{ trans('public.price') }} ({{ $currency }})</label>
             <input type="number" name="price" value="{{ (!empty($webinar) and !empty($webinar->price)) ? convertPriceToUserCurrency($webinar->price) : old('price') }}" class="form-control @error('price')  is-invalid @enderror" placeholder="{{ trans('public.0_for_free') }}"/>
             @error('price')

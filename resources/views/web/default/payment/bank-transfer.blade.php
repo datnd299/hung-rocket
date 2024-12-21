@@ -20,7 +20,11 @@
                     </div>
                     @if($order->status != 'paid')
                         <div class="mt-2 d-flex justify-content-center">
+<<<<<<< HEAD
                             <img style="max-width: 300px; max-height: 300px;" src="{{ $channel->getQrCodeSource($order)  }}" alt="">
+=======
+                            <img style="max-width: 300px; max-height: 300px; background: white; padding: 5px;" src="{{ $channel->getQrCodeSource($order)  }}" alt="">
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
                         </div>
                         <div class="mt-2 d-flex align-items-center alert alert-info" role="alert">
                             <div class="mr-3">

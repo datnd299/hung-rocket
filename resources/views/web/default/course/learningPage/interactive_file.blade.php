@@ -4,7 +4,11 @@
 
     <!-- General CSS File -->
     <link href="/assets/default/css/font.css" rel="stylesheet">
+<<<<<<< HEAD
     <link rel="stylesheet" href="/assets/default/css/app.css">
+=======
+    <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.0">
+>>>>>>> 0c6935c93267bbb11d7188927eee9b8a200a68b3
 </head>
 <body class="play-iframe-page">
 @if(!empty($iframe))
