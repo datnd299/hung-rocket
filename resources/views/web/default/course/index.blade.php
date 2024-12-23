@@ -398,17 +398,17 @@
                             </div>
                         @endif
 
-                        <div class="mt-20 d-flex align-items-center justify-content-between text-gray">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="user" width="20" height="20"></i>
-                                <span class="ml-5 font-14 font-weight-500">{{ trans('public.capacity') }}:</span>
-                            </div>
-                            @if(!is_null($course->capacity))
-                                <span class="font-14">{{ $course->capacity }} {{ trans('quiz.students') }}</span>
-                            @else
-                                <span class="font-14">{{ trans('update.unlimited') }}</span>
-                            @endif
-                        </div>
+{{--                        <div class="mt-20 d-flex align-items-center justify-content-between text-gray">--}}
+{{--                            <div class="d-flex align-items-center">--}}
+{{--                                <i data-feather="user" width="20" height="20"></i>--}}
+{{--                                <span class="ml-5 font-14 font-weight-500">{{ trans('public.capacity') }}:</span>--}}
+{{--                            </div>--}}
+{{--                            @if(!is_null($course->capacity))--}}
+{{--                                <span class="font-14">{{ $course->capacity }} {{ trans('quiz.students') }}</span>--}}
+{{--                            @else--}}
+{{--                                <span class="font-14">{{ trans('update.unlimited') }}</span>--}}
+{{--                            @endif--}}
+{{--                        </div>--}}
 
                         <div class="mt-20 d-flex align-items-center justify-content-between text-gray">
                             <div class="d-flex align-items-center">
@@ -418,13 +418,13 @@
                             <span class="font-14">{{ convertMinutesToHourAndMinute(!empty($course->duration) ? $course->duration : 0) }} {{ trans('home.hours') }}</span>
                         </div>
 
-                        <div class="mt-20 d-flex align-items-center justify-content-between text-gray">
-                            <div class="d-flex align-items-center">
-                                <i data-feather="users" width="20" height="20"></i>
-                                <span class="ml-5 font-14 font-weight-500">{{ trans('quiz.students') }}:</span>
-                            </div>
-                            <span class="font-14">{{ $course->getSalesCount() }}</span>
-                        </div>
+{{--                        <div class="mt-20 d-flex align-items-center justify-content-between text-gray">--}}
+{{--                            <div class="d-flex align-items-center">--}}
+{{--                                <i data-feather="users" width="20" height="20"></i>--}}
+{{--                                <span class="ml-5 font-14 font-weight-500">{{ trans('quiz.students') }}:</span>--}}
+{{--                            </div>--}}
+{{--                            <span class="font-14">{{ $course->getSalesCount() }}</span>--}}
+{{--                        </div>--}}
 
                         @if($course->isWebinar())
                             <div class="mt-20 d-flex align-items-center justify-content-between text-gray">
