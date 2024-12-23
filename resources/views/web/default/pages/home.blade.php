@@ -32,7 +32,8 @@ $videoDemos = [
     ]
 ];
 $fanpageUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
-$contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
+$contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
+$phoneUrl = 'tel:0377028539'
 @endphp
 
 @section('content')
@@ -706,7 +707,7 @@ $contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492'
 
                             <div class="mt-35 d-flex align-items-center">
                                 @if(!empty($findInstructorSection['button1']) and !empty($findInstructorSection['button1']['title']) and !empty($findInstructorSection['button1']['link']))
-                                    <a href="{{$contactNowUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
+                                    <a href="{{$phoneUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
                                 @endif
 
 {{--                                @if(!empty($findInstructorSection['button2']) and !empty($findInstructorSection['button2']['title']) and !empty($findInstructorSection['button2']['link']))--}}
