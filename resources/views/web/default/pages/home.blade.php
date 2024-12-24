@@ -61,7 +61,7 @@ $phoneUrl = 'tel:0377028539'
             <div class="container user-select-none">
 
                 @if($heroSection == "2")
-                    <div class="row slider-content align-items-center hero-section2 flex-column-reverse flex-md-row">
+                    <div class="row slider-content align-items-center hero-section2 flex-md-row">
                         <div class="col-12 col-md-6 col-lg-5">
                             <h1 class="text-gray font-weight-bold">Biến AI thành tay sai của bạn</h1>
                             <p class="slide-hint text-gray mt-20">Chào mừng bạn đến với Hưng AI Creative – nơi biến đam mê thành sức mạnh sáng tạo vượt bậc! Học cách làm chủ AI, tạo video siêu ấn tượng, tăng năng suất tối đa và bứt phá từ nghiệp dư thành chuyên gia. Tự tay tạo ra những content triệu view, chinh phục mọi xu hướng!</p>
@@ -73,13 +73,9 @@ $phoneUrl = 'tel:0377028539'
 {{--                                </div>--}}
 {{--                            </form>--}}
                         </div>
-{{--                        <div class="col-12 col-md-5 col-lg-6">--}}
-{{--                            @if(!empty($heroSectionData['has_lottie']) and $heroSectionData['has_lottie'] == "1")--}}
-{{--                                <lottie-player src="https://lottie.host/10bb28e5-3ebf-45ad-a343-1d654bed6ee9/l0YrYaj8fO.json" background="transparent" speed="0.4" class="w-100" loop autoplay></lottie-player>--}}
-{{--                            @else--}}
-{{--                                <img src="{{ $heroSectionData['hero_vector'] }}" alt="{{ $heroSectionData['title'] }}" class="img-cover">--}}
-{{--                            @endif--}}
-{{--                        </div>--}}
+                        <div class="col-12 col-md-5 col-lg-6 d-flex justify-content-center">
+                            <a href="https://hungaicreative.com/course/khoa-hoc-lam-phim-mv-ai" class="btn-learn-banner btn btn-primary mt-15">Học ngay</a>
+                        </div>
                     </div>
                 @else
                     <div class="text-center slider-content">

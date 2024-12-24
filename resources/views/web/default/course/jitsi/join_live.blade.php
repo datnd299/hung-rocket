@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{{ $pageTitle ?? '' }}{{ !empty($generalSettings['site_name']) ? (' | '.$generalSettings['site_name']) : '' }}</title>
-    <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.0">
+    <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.1">
 </head>
 
 <body class="w-100 h-100">

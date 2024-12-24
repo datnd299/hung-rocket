@@ -3,6 +3,16 @@
 .card-ai-hint {
     height: 500px
 }
+.btn-learn-banner {
+  font-size: 36px !important;
+  padding: 36px !important;
+}
+@media  all and (max-width: 991px) {
+  .btn-learn-banner.btn {
+    padding: 27px !important;
+    font-size: 20px !important;
+  }
+}
 .simplebar-content-wrapper {
     background: var(--surface-card);
 }

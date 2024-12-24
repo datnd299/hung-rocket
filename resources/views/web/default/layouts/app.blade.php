@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/assets/default/vendors/sweetalert2/dist/sweetalert2.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/toast/jquery.toast.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/simplebar/simplebar.css">
-    <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.0">
+    <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.1">
 
     @if($isRtl)
         <link rel="stylesheet" href="/assets/default/css/rtl-app.css">
