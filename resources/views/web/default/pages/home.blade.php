@@ -74,7 +74,7 @@ $phoneUrl = 'tel:0377028539'
 {{--                            </form>--}}
                         </div>
                         <div class="col-12 col-md-5 col-lg-6 d-flex justify-content-center">
-                            <a href="https://hungaicreative.com/course/khoa-hoc-lam-phim-mv-ai" class="btn-learn-banner btn btn-primary mt-15">Học ngay</a>
+                            <a href="https://learn.hungaicreative.com/classes" class="btn-learn-banner btn btn-primary mt-15">Học ngay</a>
                         </div>
                     </div>
                 @else
@@ -146,7 +146,7 @@ $phoneUrl = 'tel:0377028539'
                         <p class="section-hint">Học online tiết kiệm 90% chi phí</p>
                     </div>
 
-                    <a href="/classes?type[]=bundle" class="btn btn-border-white">Xem tất cả</a>
+                    <a href="/classes" class="btn btn-border-white">Xem tất cả</a>
                 </div>
 
                 <div class="mt-10 position-relative">

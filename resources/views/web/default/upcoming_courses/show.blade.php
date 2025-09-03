@@ -283,18 +283,18 @@
                 @endif
 
                 {{-- ads --}}
-                @if(!empty($advertisingBannersSidebar) and count($advertisingBannersSidebar))
-                    <div class="row">
-                        @foreach($advertisingBannersSidebar as $sidebarBanner)
-                            <div class="rounded-lg sidebar-ads mt-35 col-{{ $sidebarBanner->size }}">
-                                <a href="{{ $sidebarBanner->link }}">
-                                    <img src="{{ $sidebarBanner->image }}" class="img-cover rounded-lg" alt="{{ $sidebarBanner->title }}">
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
+{{--                @if(!empty($advertisingBannersSidebar) and count($advertisingBannersSidebar))--}}
+{{--                    <div class="row">--}}
+{{--                        @foreach($advertisingBannersSidebar as $sidebarBanner)--}}
+{{--                            <div class="rounded-lg sidebar-ads mt-35 col-{{ $sidebarBanner->size }}">--}}
+{{--                                <a href="{{ $sidebarBanner->link }}">--}}
+{{--                                    <img src="{{ $sidebarBanner->image }}" class="img-cover rounded-lg" alt="{{ $sidebarBanner->title }}">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
 
-                @endif
+{{--                @endif--}}
             </div>
         </div>
 

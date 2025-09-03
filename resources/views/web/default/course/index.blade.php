@@ -36,10 +36,10 @@
                             <span class="d-block font-16 mt-10">{{ trans('public.in') }} <a href="{{ $course->category->getUrl() }}" target="_blank" class="font-weight-500 text-decoration-underline text-white">{{ $course->category->title }}</a></span>
                         @endif
 
-                        <div class="d-flex align-items-center">
-                            @include('web.default.includes.webinar.rate',['rate' => $course->getRate()])
-                            <span class="ml-10 mt-15 font-14">({{ $course->reviews->pluck('creator_id')->count() }} {{ trans('public.ratings') }})</span>
-                        </div>
+{{--                        <div class="d-flex align-items-center">--}}
+{{--                            @include('web.default.includes.webinar.rate',['rate' => $course->getRate()])--}}
+{{--                            <span class="ml-10 mt-15 font-14">({{ $course->reviews->pluck('creator_id')->count() }} {{ trans('public.ratings') }})</span>--}}
+{{--                        </div>--}}
 
                         <div class="mt-15">
                             <span class="font-14">{{ trans('public.created_by') }}</span>
@@ -503,18 +503,18 @@
                     </div>
                 @endif
                 {{-- ads --}}
-                @if(!empty($advertisingBannersSidebar) and count($advertisingBannersSidebar))
-                    <div class="row">
-                        @foreach($advertisingBannersSidebar as $sidebarBanner)
-                            <div class="rounded-lg sidebar-ads mt-35 col-{{ $sidebarBanner->size }}">
-                                <a href="{{ $sidebarBanner->link }}">
-                                    <img src="{{ $sidebarBanner->image }}" class="img-cover rounded-lg" alt="{{ $sidebarBanner->title }}">
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
+{{--                @if(!empty($advertisingBannersSidebar) and count($advertisingBannersSidebar))--}}
+{{--                    <div class="row">--}}
+{{--                        @foreach($advertisingBannersSidebar as $sidebarBanner)--}}
+{{--                            <div class="rounded-lg sidebar-ads mt-35 col-{{ $sidebarBanner->size }}">--}}
+{{--                                <a href="{{ $sidebarBanner->link }}">--}}
+{{--                                    <img src="{{ $sidebarBanner->image }}" class="img-cover rounded-lg" alt="{{ $sidebarBanner->title }}">--}}
+{{--                                </a>--}}
+{{--                            </div>--}}
+{{--                        @endforeach--}}
+{{--                    </div>--}}
 
-                @endif
+{{--                @endif--}}
             </div>
         </div>
 
