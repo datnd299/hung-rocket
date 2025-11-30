@@ -52,9 +52,7 @@
         "toshy/bunnynet-php": "2.3.5",
         "twilio/sdk": "^7.5",
         "tymon/jwt-auth": "^2.0",
-        "unisharp/laravel-filemanager": "2.9.1",
-        "vonage/vonage-laravel": "^1.0",
-        "xendit/xendit-php": "^3.6"
+        "unisharp/laravel-filemanager": "2.9.1"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
