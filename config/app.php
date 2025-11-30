@@ -199,20 +199,20 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Maatwebsite\Excel\ExcelServiceProvider::class,
-        Mews\Captcha\CaptchaServiceProvider::class,
-        Jorenvh\Share\Providers\ShareServiceProvider::class,
+//        Mews\Captcha\CaptchaServiceProvider::class,
+//        Jorenvh\Share\Providers\ShareServiceProvider::class,
         //KingFlamez\Rave\RaveServiceProvider::class,
 
         App\Providers\MinioStorageServiceProvider::class,
-        Ssheduardo\Redsys\RedsysServiceProvider::class,
-        Jubaer\Zoom\ZoomServiceProvider::class,
+//        Ssheduardo\Redsys\RedsysServiceProvider::class,
+//        Jubaer\Zoom\ZoomServiceProvider::class,
         \Torann\GeoIP\GeoIPServiceProvider::class,
         niklasravnsborg\LaravelPdf\PdfServiceProvider::class,
         Kavenegar\Laravel\ServiceProvider::class,
-        MoemenGaballah\Msegat\MsegatServiceProvider::class,
-        Craftsys\Msg91\Msg91LaravelServiceProvider::class,
+//        MoemenGaballah\Msegat\MsegatServiceProvider::class,
+//        Craftsys\Msg91\Msg91LaravelServiceProvider::class,
         Kreait\Laravel\Firebase\ServiceProvider::class,
-        Paytabscom\Laravel_paytabs\PaypageServiceProvider::class,
+//        Paytabscom\Laravel_paytabs\PaypageServiceProvider::class,
     ],
 
     /*
