@@ -2559,7 +2559,12 @@ function addCurrencyToPrice($price, $userCurrencyItem = null)
 function handleCoursePagePrice($price)
 {
     $result = handlePrice($price, true, true, true, null, true);
-
+    if (is_numeric($result)) {
+        $result = [
+            'price' => $result,
+            'tax' => 0
+        ];
+    }
     $price = addCurrencyToPrice($result['price']);
 
     $tax = !empty($result['tax']) ? addCurrencyToPrice($result['tax']) : 0;
