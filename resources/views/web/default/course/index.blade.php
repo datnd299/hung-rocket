@@ -458,9 +458,9 @@
                             <div class="mt-20 d-flex align-items-center justify-content-between text-gray">
                                 <div class="d-flex align-items-center">
                                     <img src="/assets/default/img/icons/sessions.svg" width="20" alt="">
-                                    <span class="ml-5 font-14 font-weight-500">{{ trans('public.created_at') }}:</span>
+                                    <span class="ml-5 font-14 font-weight-500">Ngày cập nhật:</span>
                                 </div>
-                                <span class="font-14">{{ dateTimeFormat($course->created_at,'j M Y') }}</span>
+                                <span class="font-14">{{ dateTimeFormat($course->updated_at,'j M Y') }}</span>
                             </div>
                         @endif
 
