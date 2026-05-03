@@ -6,28 +6,28 @@
             'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
             'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
             'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                        MiniMax Hailuo AI tại WAIF.FR...',
+                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
             'date' => '28 tháng 4, 2026'
         ],
         [
             'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
             'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
             'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                        MiniMax Hailuo AI tại WAIF.FR...',
+                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
             'date' => '28 tháng 4, 2026'
         ],
         [
             'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
             'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
             'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                        MiniMax Hailuo AI tại WAIF.FR...',
+                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
             'date' => '28 tháng 4, 2026'
         ],
         [
             'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
             'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
             'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                        MiniMax Hailuo AI tại WAIF.FR...',
+                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
             'date' => '28 tháng 4, 2026'
         ]
     ];
@@ -68,7 +68,6 @@
         <div class="intro-backdrop"></div>
         <div class="intro-ring"></div>
         <div class="intro-ring intro-ring-2"></div>
-        git
         <div class="intro-logo-wrap">
             <div class="intro-logo-icon">
                 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
