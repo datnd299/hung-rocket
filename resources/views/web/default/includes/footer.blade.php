@@ -2,7 +2,7 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
-                <div class="font-heading font-bold text-2xl mb-6">AhKi.io</div>
+                <div class="font-heading font-bold text-2xl mb-6">HungAiCreative</div>
             </div>
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">ĐƯỜNG DẪN</h4>
@@ -18,7 +18,7 @@
                 <ul class="space-y-4 text-sm text-gray-300">
                     <li><a href="#" class="hover:text-white">Facebook</a></li>
                     <li><a href="#" class="hover:text-white">Zalo</a></li>
-                    <li><a href="#" class="hover:text-white">support@ahki.io</a></li>
+                    <li><a href="#" class="hover:text-white">support@hungaicreative.com</a></li>
                 </ul>
             </div>
             <div>
@@ -42,7 +42,7 @@
                 </div>
             </div>
         </div>
-        <div class="text-center text-xs text-gray-600 border-t border-white/10 pt-8">© 2026 AhKi.io. All rights
-            reserved. | Bản quyền thuộc về AhKi.io.</div>
+        <div class="text-center text-xs text-gray-600 border-t border-white/10 pt-8">© 2026 HungAiCreative. All rights
+            reserved. | Bản quyền thuộc về HungAiCreative.</div>
     </div>
 </footer>

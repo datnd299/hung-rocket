@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './resources/views/web/default/pages/home.blade.php',
+    './resources/views/web/default/includes/footer.blade.php'
   ],
   theme: {
     extend: {
