@@ -1,160 +1,496 @@
-@extends(getTemplate().'.layouts.app')
+@extends(getTemplate() . '.layouts.app')
+
+@php
+    $news = [
+        [
+            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
+            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
+                                                                                                                MiniMax Hailuo AI tại WAIF.FR...',
+            'date' => '28 tháng 4, 2026'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
+            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
+                                                                                                                MiniMax Hailuo AI tại WAIF.FR...',
+            'date' => '28 tháng 4, 2026'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
+            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
+                                                                                                                MiniMax Hailuo AI tại WAIF.FR...',
+            'date' => '28 tháng 4, 2026'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
+            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
+                                                                                                                MiniMax Hailuo AI tại WAIF.FR...',
+            'date' => '28 tháng 4, 2026'
+        ]
+    ];
+    $tutorials = [
+        [
+            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Giới thiệu về bộ công cụ AI Suite',
+            'source' => 'Freepik Academy'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Giới thiệu về bộ công cụ AI Suite',
+            'source' => 'Freepik Academy'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Giới thiệu về bộ công cụ AI Suite',
+            'source' => 'Freepik Academy'
+        ],
+        [
+            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
+            'title' => 'Giới thiệu về bộ công cụ AI Suite',
+            'source' => 'Freepik Academy'
+        ],
+    ]
+@endphp
 
 @push('styles_top')
     <link rel="stylesheet" href="/assets/default/vendors/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/owl-carousel2/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/home-tw.css">
+
+    <link rel="stylesheet" href="/assets/home.css">
 @endpush
-@php
-$videoDemos = [
-    [
-        'name' => 'Trí tuệ nhân tạo không chỉ là công cụ, mà là cánh cửa mở ra tiềm năng vô hạn của con người.',
-        'desc' => '',
-        'source' => '/assets/a1.jpg',
-        'type' => 'image'
-    ],
-    [
-        'name' => 'AI không thay thế con người, mà khuếch đại sức mạnh tư duy và khả năng sáng tạo của chúng ta.',
-        'desc' => '',
-        'source' => '/assets/a6.jpg',
-        'type' => 'image'
-    ],
-    [
-        'name' => 'Trong thời đại AI, giới hạn duy nhất là trí tưởng tượng của chúng ta.',
-        'desc' => '',
-        'source' => '/assets/a3.jpg',
-        'type' => 'image'
-    ],
-    [
-        'name' => 'Sức mạnh thực sự của AI nằm ở khả năng biến dữ liệu thành tri thức và tri thức thành hành động.',
-        'desc' => '',
-        'source' => '/assets/a4.jpg',
-        'type' => 'image'
-    ]
-];
-$fanpageUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
-$contactNowUrl = 'https://web.facebook.com/profile.php?id=61569987181492';
-$phoneUrl = 'tel:0377028539'
-@endphp
 
 @section('content')
+    <div class="intro-loader" id="introLoader">
+        <div class="intro-grid"></div>
+        <div class="intro-backdrop"></div>
+        <div class="intro-ring"></div>
+        <div class="intro-ring intro-ring-2"></div>
 
-    @if(!empty($heroSectionData))
-
-        @if(!empty($heroSectionData['has_lottie']) and $heroSectionData['has_lottie'] == "1")
-            @push('scripts_bottom')
-                <script src="/assets/default/vendors/lottie/lottie-player.js"></script>
-            @endpush
-        @endif
-
-        <section class="slider-container  {{ ($heroSection == "2") ? 'slider-hero-section2' : '' }}" @if(empty($heroSectionData['is_video_background'])) style="background-image: url('/assets/bg4.jpg')" @endif>
-
-            @if($heroSection == "2")
-                @if(true || !empty($heroSectionData['is_video_background']))
-                    <video playsinline autoplay muted loop id="homeHeroVideoBackground" class="img-cover">
-                        <source src="/assets/car.mp4" type="video/mp4">
-                    </video>
-                @endif
-
-                <div class="mask"></div>
-            @endif
-
-            <div class="container user-select-none">
-
-                @if($heroSection == "2")
-                    <div class="row slider-content align-items-center hero-section2 flex-md-row">
-                        <div class="col-12 col-md-6 col-lg-5">
-                            <h1 class="text-gray font-weight-bold">Biến AI thành tay sai của bạn</h1>
-                            <p class="slide-hint text-gray mt-20">Chào mừng bạn đến với Hưng AI Creative – nơi biến đam mê thành sức mạnh sáng tạo vượt bậc! Học cách làm chủ AI, tạo video siêu ấn tượng, tăng năng suất tối đa và bứt phá từ nghiệp dư thành chuyên gia. Tự tay tạo ra những content triệu view, chinh phục mọi xu hướng!</p>
-
-{{--                            <form action="/search" method="get" class="d-inline-flex mt-30 mt-lg-30 w-100">--}}
-{{--                                <div class="form-group d-flex align-items-center m-0 slider-search p-10 bg-white w-100">--}}
-{{--                                    <input type="text" name="search" class="form-control border-0 mr-lg-50" placeholder="{{ trans('home.slider_search_placeholder') }}"/>--}}
-{{--                                    <button type="submit" class="btn btn-primary rounded-pill">{{ trans('home.find') }}</button>--}}
-{{--                                </div>--}}
-{{--                            </form>--}}
-                        </div>
-                        <div class="col-12 col-md-5 col-lg-6 d-flex justify-content-center">
-                            <a href="https://learn.hungaicreative.com/classes" class="btn-learn-banner btn btn-primary mt-15">Học ngay</a>
-                        </div>
-                    </div>
-                @else
-                    <div class="text-center slider-content">
-                        <h1>Biến AI thành tay sai của bạn</h1>
-                        <div class="row h-100 align-items-center justify-content-center text-center">
-                            <div class="col-12 col-md-9 col-lg-7">
-                                <p class="mt-30 slide-hint">Chào mừng bạn đến với Hưng AI Creative – nơi biến đam mê thành sức mạnh sáng tạo vượt bậc! Học cách làm chủ AI, tạo video siêu ấn tượng, tăng năng suất tối đa và bứt phá từ nghiệp dư thành chuyên gia. Tự tay tạo ra những content triệu view, chinh phục mọi xu hướng!</p>
-
-{{--                                <form action="/search" method="get" class="d-inline-flex mt-30 mt-lg-50 w-100">--}}
-{{--                                    <div class="form-group d-flex align-items-center m-0 slider-search p-10 bg-white w-100">--}}
-{{--                                        <input type="text" name="search" class="form-control border-0 mr-lg-50" placeholder="{{ trans('home.slider_search_placeholder') }}"/>--}}
-{{--                                        <button type="submit" class="btn btn-primary rounded-pill">{{ trans('home.find') }}</button>--}}
-{{--                                    </div>--}}
-{{--                                </form>--}}
-                            </div>
-                        </div>
-                    </div>
-                @endif
+        <div class="intro-logo-wrap">
+            <div class="intro-logo-icon">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <defs>
+                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#fbcb1c" />
+                            <stop offset="100%" stop-color="#ffffff" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="50" cy="50" r="45" stroke="url(#logoGrad)" stroke-width="2" stroke-dasharray="4 8"
+                        opacity="0.6">
+                        <animateTransform attributeName="transform" type="rotate" from="0 50 50" to="360 50 50" dur="4s"
+                            repeatCount="indefinite" />
+                    </circle>
+                    <path d="M50 15 L60 40 L85 50 L60 60 L50 85 L40 60 L15 50 L40 40 Z" fill="url(#logoGrad)" />
+                    <circle cx="50" cy="50" r="6" fill="#050505" />
+                </svg>
             </div>
-        </section>
-    @endif
-
-
-    {{-- Statistics --}}
-    @include('web.default.pages.includes.home_statistics')
-    <section class="home-sections home-sections-swiper container mt-0">
-        <div class="px-20 px-md-0">
-            <h2 class="section-title">Cùng tôi chinh phục AI</h2>
+            <div class="intro-logo-text">
+                HUNG<span style="color: #fbcb1c; -webkit-text-fill-color: #fbcb1c;">AI</span>CREATIVE
+                <span class="intro-scan"></span>
+            </div>
         </div>
 
-        <div class="feature-slider-container position-relative d-flex justify-content-center mt-10">
-            <div class="swiper-container features-swiper-container pb-25">
-                <div class="swiper-wrapper py-10">
-                    @foreach($videoDemos as $videoDemo)
-                        <div class="swiper-slide">
-                            <div class="h-100">
-                                <div class="feature-slider d-flex h-100" @if($videoDemo['type'] == 'image') style="background-image: url('{{$videoDemo['source']}}')" @endif">
-{{--                                    <div class="mask"></div>--}}
-                                    <div class="p-5 p-md-25 feature-slider-card card-ai-hint" style="width: 435px" >
-                                        <div class="d-flex flex-column feature-slider-body position-relative h-200">
-                                            <div>
-                                                <h3 class="card-title mt-1">{{ $videoDemo['name'] }}</h3>
-                                            </div>
+        <div class="intro-particle" style="...; animation-delay: 0.6s;"></div> <!-- 1.2s → 0.6s -->
+        <div class="intro-particle" style="...; animation-delay: 0.625s;"></div> <!-- 1.25s -->
+        <div class="intro-particle" style="...; animation-delay: 0.65s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.675s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.7s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.725s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.75s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.775s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.8s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.825s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.85s;"></div>
+        <div class="intro-particle" style="...; animation-delay: 0.875s;"></div>
 
-                                            <div>
-                                                {{ $videoDemo['desc'] }}
-                                            </div>
-                                        </div>
+        <div class="intro-loading-bar"></div>
+        <div class="intro-loading-text">LOADING EXPERIENCE</div>
+
+        <div class="intro-curtain intro-curtain-left"></div>
+        <div class="intro-curtain intro-curtain-right"></div>
+    </div>
+    <main id="mainContent" class="overflow-x-hidden">
+        {{-- ===== HERO SECTION ===== --}}
+        <section class="relative h-screen overflow-hidden" id="scroll-video-section">
+            <video id="scroll-video" class="absolute inset-0 w-full h-full object-cover" muted playsinline preload="auto"
+                disablepictureinpicture disableremoteplayback>
+                <source src="/assets/hero.mov" type="video/mp4; codecs=hvc1">
+                <source src="/assets/hero.mp4" type="video/mp4">
+            </video>
+
+            {{-- Overlay tối --}}
+            <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black z-[1]"></div>
+
+            {{-- Floating blobs --}}
+            <div class="floating-blob blob-1 z-[2]"></div>
+            <div class="floating-blob blob-2 z-[2]"></div>
+
+            {{-- Nội dung --}}
+            <div class="relative z-10 h-full flex items-center justify-center">
+                <div class="text-center max-w-4xl px-6">
+                    <h1 class="hero-title text-5xl md:text-7xl font-bold tracking-tight mb-6 font-heading">
+                        Khám Phá Vô Vàn Khả Năng
+                    </h1>
+                    <p class="hero-subtitle text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                        Tạo ra những khoảnh khắc đậm chất điện ảnh bằng công nghệ tạo video tiên tiến
+                    </p>
+                    <a href="/classes"
+                        class="hero-button inline-flex items-center gap-2 px-8 py-3 rounded-full border border-white/30 bg-white/5 backdrop-blur-md hover:bg-white hover:text-black transition-all group font-semibold">
+                        Khám Phá Ngay
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="group-hover:translate-x-1 transition-transform" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Scroll indicator --}}
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+                <div class="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-1.5">
+                    <div class="w-1 h-2 bg-white/60 rounded-full"></div>
+                </div>
+            </div>
+        </section>
+        <script>
+            (function () {
+                const video = document.getElementById('scroll-video');
+                const section = document.getElementById('scroll-video-section');
+
+                if (!video || !section) return;
+
+                const INTRO_DURATION = 0.8; // giây
+                let phase = 'waiting';    // 'waiting' → 'playing-intro' → 'scrubbing'
+                let isReady = false;
+                let targetTime = INTRO_DURATION;
+                let currentTime = INTRO_DURATION;
+                let savedScrollY = 0;
+
+                // ===== Lock / Unlock scroll (cách mạnh hơn) =====
+                const preventScroll = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    return false;
+                };
+
+                const preventKeys = (e) => {
+                    const blocked = ['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Space', 'End', 'Home'];
+                    if (blocked.includes(e.key) || e.keyCode === 32) {
+                        e.preventDefault();
+                        return false;
+                    }
+                };
+
+                const lockScroll = () => {
+                    savedScrollY = window.scrollY;
+                    // Cách mạnh: fix body, chặn cả wheel/touch/key
+                    document.body.style.position = 'fixed';
+                    document.body.style.top = `-${savedScrollY}px`;
+                    document.body.style.left = '0';
+                    document.body.style.right = '0';
+                    document.body.style.width = '100%';
+
+                    window.addEventListener('wheel', preventScroll, { passive: false });
+                    window.addEventListener('touchmove', preventScroll, { passive: false });
+                    window.addEventListener('keydown', preventKeys, { passive: false });
+                };
+
+                const unlockScroll = () => {
+                    document.body.style.position = '';
+                    document.body.style.top = '';
+                    document.body.style.left = '';
+                    document.body.style.right = '';
+                    document.body.style.width = '';
+                    window.scrollTo(0, savedScrollY);
+
+                    window.removeEventListener('wheel', preventScroll);
+                    window.removeEventListener('touchmove', preventScroll);
+                    window.removeEventListener('keydown', preventKeys);
+                };
+
+                // ===== Phase 1: Intro animation (dùng play thật) =====
+                const playIntro = () => {
+                    phase = 'playing-intro';
+                    lockScroll();
+
+                    video.currentTime = 0;
+                    video.playbackRate = 2;
+                    video.play().catch(() => {
+                        // Nếu autoplay bị block (hiếm vì đã muted), fallback bằng seek
+                        fallbackIntro();
+                    });
+
+                    // Theo dõi thời gian, pause khi đạt INTRO_DURATION
+                    const checkTime = () => {
+                        if (phase !== 'playing-intro') return;
+
+                        if (video.currentTime >= INTRO_DURATION) {
+                            video.pause();
+                            video.currentTime = INTRO_DURATION;
+                            video.playbackRate = 1;
+                            currentTime = INTRO_DURATION;
+                            targetTime = INTRO_DURATION;
+                            phase = 'scrubbing';
+                            unlockScroll();
+                            requestAnimationFrame(scrubTick);
+                            return;
+                        }
+
+                        requestAnimationFrame(checkTime);
+                    };
+                    requestAnimationFrame(checkTime);
+                };
+
+                // Fallback nếu play() fail
+                const fallbackIntro = () => {
+                    const start = performance.now();
+                    const tick = (now) => {
+                        if (phase !== 'playing-intro') return;
+                        const elapsed = (now - start) / 1000;
+                        if (elapsed >= INTRO_DURATION) {
+                            video.currentTime = INTRO_DURATION;
+                            currentTime = INTRO_DURATION;
+                            targetTime = INTRO_DURATION;
+                            phase = 'scrubbing';
+                            unlockScroll();
+                            requestAnimationFrame(scrubTick);
+                            return;
+                        }
+                        try { video.currentTime = elapsed; } catch (e) { }
+                        requestAnimationFrame(tick);
+                    };
+                    requestAnimationFrame(tick);
+                };
+
+                // ===== Phase 2: Scrub theo scroll =====
+                const getProgress = () => {
+                    const rect = section.getBoundingClientRect();
+                    return Math.max(0, Math.min(1, -rect.top / rect.height));
+                };
+
+                const scrubTick = () => {
+                    if (phase !== 'scrubbing') return;
+
+                    const progress = getProgress();
+                    targetTime = INTRO_DURATION + progress * (video.duration - INTRO_DURATION);
+
+                    currentTime += (targetTime - currentTime) * 0.15;
+
+                    if (Math.abs(video.currentTime - currentTime) > 0.01) {
+                        try { video.currentTime = currentTime; } catch (e) { }
+                    }
+
+                    requestAnimationFrame(scrubTick);
+                };
+
+                // ===== Detect lần đầu user muốn scroll =====
+                const onFirstScrollAttempt = (e) => {
+                    if (phase !== 'waiting') return;
+
+                    const isScrollingDown =
+                        (e.type === 'wheel' && e.deltaY > 0) ||
+                        (e.type === 'keydown' && ['ArrowDown', 'PageDown', 'Space'].includes(e.key)) ||
+                        (e.type === 'touchstart');
+
+                    if (!isScrollingDown) return;
+
+                    e.preventDefault();
+
+                    window.removeEventListener('wheel', onFirstScrollAttempt);
+                    window.removeEventListener('keydown', onFirstScrollAttempt);
+                    window.removeEventListener('touchstart', onFirstScrollAttempt);
+
+                    playIntro();
+                };
+
+                // ===== Init =====
+                const onReady = () => {
+                    if (isReady) return;
+                    isReady = true;
+                    video.pause();
+                    video.currentTime = 0;
+
+                    window.addEventListener('wheel', onFirstScrollAttempt, { passive: false });
+                    window.addEventListener('keydown', onFirstScrollAttempt, { passive: false });
+                    window.addEventListener('touchstart', onFirstScrollAttempt, { passive: false });
+                };
+
+                video.addEventListener('loadedmetadata', onReady);
+                video.addEventListener('canplay', onReady);
+
+                video.load();
+            })();
+        </script>
+
+        {{-- ===== NEWS SECTION ===== --}}
+        <section class="py-24 max-w-7xl mx-auto px-6">
+            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Tin Tức</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                @foreach ($news as $new)
+                    <div class="news-card reveal stagger-1 group cursor-pointer">
+                        <div class="news-img-wrapper rounded-2xl overflow-hidden mb-4 aspect-[4/3] bg-gray-900">
+                            <img alt="{{ $new['title'] }}"
+                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                                src="{{ $new['img'] }}">
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 line-clamp-2 leading-tight">{{ $new['title'] }}</h3>
+                        <p class="text-gray-400 text-sm mb-3 line-clamp-2">{{ $new['desc'] }}</p>
+                        <p class="text-gray-500 text-xs">{{ $new['date'] }}</p>
+                    </div>
+                @endforeach
+            </div>
+            <div class="mt-12 text-center reveal">
+                <a href="https://www.tiktok.com/@hung_ai_creative?is_from_webapp=1&sender_device=pc" target="_blank"
+                    class="cta-btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 transition-colors text-sm font-medium">
+                    <span>Tin tức</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-arrow-right" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        {{-- ===== TUTORIAL SECTION ===== --}}
+        <section class="py-24 bg-[#0a0a0a] relative overflow-hidden">
+            <div class="floating-blob blob-1" style="top: 50%; left: -200px; width: 300px; height: 300px; opacity: 0.15;">
+            </div>
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="text-center mb-12">
+                    <h2 class="section-title reveal text-4xl font-bold mb-4 font-heading mx-auto">Hướng dẫn</h2>
+                    <p class="reveal stagger-1 text-gray-400">Bí Kíp AI Thực Chiến, Kho Tàng Kiến Thức &amp; Kinh Nghiệm Sử
+                        Dụng AI</p>
+                </div>
+                <div class="relative overflow-hidden mb-12 reveal stagger-2 group">
+                    <!-- Gradient fade hai bên (tùy chọn, đẹp hơn) -->
+                    <div
+                        class="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none">
+                    </div>
+                    <div
+                        class="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none">
+                    </div>
+
+                    <div class="flex gap-2 animate-marquee group-hover:[animation-play-state:paused] w-max">
+                        <!-- Lần 1 -->
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Canva
+                            AI</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm bg-white text-black font-medium">Freepik</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Pika</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Adobe
+                            Firefly</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Copilot</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">NotebookLM</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">ChatGPT</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Midjourney</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Runway</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Gemini</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Kling
+                            AI</button>
+                        <button
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Suno</button>
+
+                        <!-- Lần 2 (nhân đôi để loop liền mạch) - aria-hidden vì là bản sao -->
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Canva
+                            AI</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm bg-white text-black font-medium">Freepik</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Pika</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Adobe
+                            Firefly</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Copilot</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">NotebookLM</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">ChatGPT</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Midjourney</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Runway</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Gemini</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Kling
+                            AI</button>
+                        <button aria-hidden="true"
+                            class="tab-btn shrink-0 px-4 py-1.5 rounded-full text-sm text-gray-400 hover:text-white hover:bg-white/10">Suno</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    @foreach ($tutorials as $tutorial)
+                        <div
+                            class="tutorial-card reveal-scale stagger-2 bg-[#151515] rounded-2xl p-4 border border-white/5 group cursor-pointer">
+                            <div
+                                class="aspect-video bg-gray-800 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
+                                <img alt="bg"
+                                    class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
+                                    src="{{ $tutorial['img'] }}">
+                                <div class="text-center relative z-10">
+                                    <div
+                                        class="play-button absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 border border-white/50 rounded-full flex items-center justify-center backdrop-blur-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24"
+                                            fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-play ml-1" aria-hidden="true">
+                                            <path
+                                                d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z">
+                                            </path>
+                                        </svg>
                                     </div>
                                 </div>
                             </div>
+                            <div class="text-xs text-gray-500 mb-1">{{ $tutorial['source'] }}</div>
+                            <h3 class="font-semibold text-sm mb-6">{{ $tutorial['title'] }}</h3>
                         </div>
                     @endforeach
                 </div>
-            </div>
-
-            <div class="swiper-pagination features-swiper-pagination"></div>
-        </div>
-    </section>
-
-    @foreach($homeSections as $homeSection)
-        @if($homeSection->name == \App\Models\HomeSection::$featured_classes and !empty($featureWebinars) and !$featureWebinars->isEmpty())
-
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between ">
-                    <div>
-                        <h2 class="section-title">Khoá học nổi bật</h2>
-                        <p class="section-hint">Học online tiết kiệm 90% chi phí</p>
-                    </div>
-
-                    <a href="/classes" class="btn btn-border-white">Xem tất cả</a>
+                <div class="mt-12 text-center reveal">
+                    <a href="https://www.tiktok.com/@hung_ai_creative?is_from_webapp=1&sender_device=pc"
+                        class="cta-btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 transition-colors text-sm font-medium">
+                        <span>Xem thêm hướng dẫn</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="lucide lucide-arrow-right" aria-hidden="true">
+                            <path d="M5 12h14"></path>
+                            <path d="m12 5 7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
+            </div>
+        </section>
 
+        {{-- ===== PRICING SECTION ===== --}}
+        <section class="py-24 max-w-7xl mx-auto px-6 relative">
+            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Ưu Đãi Hiện
+                Hành</h2>
+            <div>
                 <div class="mt-10 position-relative">
                     <div class="swiper-container latest-bundle-swiper px-12">
                         <div class="swiper-wrapper py-20">
                             @foreach($featureWebinars as $latestBundle)
                                 <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $latestBundle->webinar])
+                                    @include('web.default.includes.webinar.grid-card', ['webinar' => $latestBundle->webinar])
                                 </div>
                             @endforeach
 
@@ -165,844 +501,436 @@ $phoneUrl = 'tel:0377028539'
                         <div class="swiper-pagination bundle-webinars-swiper-pagination"></div>
                     </div>
                 </div>
-            </section>
-{{--            <section class="home-sections home-sections-swiper container">--}}
-{{--                <div class="px-20 px-md-0">--}}
-{{--                    <h2 class="section-title">{{ trans('home.featured_classes') }}</h2>--}}
-{{--                    <p class="section-hint">Học online giúp bạn tiết kệm 90% chi phí</p>--}}
-{{--                </div>--}}
+            </div>
+            <div class="mt-[70px] text-center reveal">
+                <a href="/classes"
+                    class="cta-btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 transition-colors text-sm font-medium">
+                    <span>Xem tất cả</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-arrow-right" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
+            </div>
+        </section>
 
-{{--                <div class="feature-slider-container position-relative d-flex justify-content-center mt-10">--}}
-{{--                    <div class="swiper-container features-swiper-container pb-25">--}}
-{{--                        <div class="swiper-wrapper py-10">--}}
-{{--                            @foreach($featureWebinars as $feature)--}}
-{{--                                <div class="swiper-slide">--}}
-
-{{--                                    <a href="{{ $feature->webinar->getUrl() }}">--}}
-{{--                                        <div class="feature-slider d-flex h-100" style="background-image: url('{{ $feature->webinar->getImage() }}')">--}}
-{{--                                            <div class="mask"></div>--}}
-{{--                                            <div class="p-5 p-md-25 feature-slider-card">--}}
-{{--                                                <div class="d-flex flex-column feature-slider-body position-relative h-100">--}}
-{{--                                                    @if($feature->webinar->bestTicket() < $feature->webinar->price)--}}
-{{--                                                        <span class="badge badge-danger mb-2 ">{{ trans('public.offer',['off' => $feature->webinar->bestTicket(true)['percent']]) }}</span>--}}
-{{--                                                    @endif--}}
-{{--                                                    <a href="{{ $feature->webinar->getUrl() }}">--}}
-{{--                                                        <h3 class="card-title mt-1">{{ $feature->webinar->title }}</h3>--}}
-{{--                                                    </a>--}}
-
-{{--                                                    <div class="user-inline-avatar mt-15 d-flex align-items-center">--}}
-{{--                                                        <div class="avatar bg-gray200">--}}
-{{--                                                            <img src="{{ $feature->webinar->teacher->getAvatar() }}" class="img-cover" alt="{{ $feature->webinar->teacher->full_naem }}">--}}
-{{--                                                        </div>--}}
-{{--                                                        <a href="{{ $feature->webinar->teacher->getProfileUrl() }}" target="_blank" class="user-name font-14 ml-5">{{ $feature->webinar->teacher->full_name }}</a>--}}
-{{--                                                    </div>--}}
-
-{{--                                                    <p class="mt-25 feature-desc text-gray">{{ $feature->description }}</p>--}}
-
-{{--                                                    @include('web.default.includes.webinar.rate',['rate' => $feature->webinar->getRate()])--}}
-
-{{--                                                    <div class="feature-footer mt-auto d-flex align-items-center justify-content-between">--}}
-{{--                                                        <div class="d-flex justify-content-between">--}}
-{{--                                                            <div class="d-flex align-items-center">--}}
-{{--                                                                <i data-feather="clock" width="20" height="20" class="webinar-icon"></i>--}}
-{{--                                                                <span class="duration ml-5 text-dark-blue font-14">{{ convertMinutesToHourAndMinute($feature->webinar->duration) }} {{ trans('home.hours') }}</span>--}}
-{{--                                                            </div>--}}
-
-{{--                                                            <div class="vertical-line mx-10"></div>--}}
-
-{{--                                                            <div class="d-flex align-items-center">--}}
-{{--                                                                <i data-feather="calendar" width="20" height="20" class="webinar-icon"></i>--}}
-{{--                                                                <span class="date-published ml-5 text-dark-blue font-14">{{ dateTimeFormat(!empty($feature->webinar->start_date) ? $feature->webinar->start_date : $feature->webinar->created_at,'j M Y') }}</span>--}}
-{{--                                                            </div>--}}
-{{--                                                        </div>--}}
-
-{{--                                                        <div class="feature-price-box">--}}
-{{--                                                            @if(!empty($feature->webinar->price ) and $feature->webinar->price > 0)--}}
-{{--                                                                @if($feature->webinar->bestTicket() < $feature->webinar->price)--}}
-{{--                                                                    <span class="real">{{ handlePrice($feature->webinar->bestTicket(), true, true, false, null, true) }}</span>--}}
-{{--                                                                @else--}}
-{{--                                                                    {{ handlePrice($feature->webinar->price, true, true, false, null, true) }}--}}
-{{--                                                                @endif--}}
-{{--                                                            @else--}}
-{{--                                                                {{ trans('public.free') }}--}}
-{{--                                                            @endif--}}
-
-
-{{--                                                        </div>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </a>--}}
-{{--                                </div>--}}
-{{--                            @endforeach--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-
-{{--                    <div class="swiper-pagination features-swiper-pagination"></div>--}}
-{{--                </div>--}}
-{{--            </section>--}}
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$latest_bundles and !empty($latestBundles) and !$latestBundles->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between ">
-                    <div>
-                        <h2 class="section-title">{{ trans('update.latest_bundles') }}</h2>
-                        <p class="section-hint">{{ trans('update.latest_bundles_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?type[]=bundle" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
+        {{-- ===== CREATIVE JOURNEY ===== --}}
+        <section class="py-24 max-w-7xl mx-auto px-6">
+            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Hành Trình Sáng
+                Tạo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                <div
+                    class="journey-card reveal-left rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 group cursor-pointer relative">
+                    <img alt="Creative"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container latest-bundle-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($latestBundles as $latestBundle)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $latestBundle])
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination bundle-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        {{-- Upcoming Course --}}
-        @if(false && $homeSection->name == \App\Models\HomeSection::$upcoming_courses and !empty($upcomingCourses) and !$upcomingCourses->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between ">
-                    <div>
-                        <h2 class="section-title">{{ trans('update.upcoming_courses') }}</h2>
-                        <p class="section-hint">{{ trans('update.upcoming_courses_home_section_hint') }}</p>
-                    </div>
-
-                    <a href="/upcoming_courses?sort=newest" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container upcoming-courses-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($upcomingCourses as $upcomingCourse)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.upcoming_course_grid_card',['upcomingCourse' => $upcomingCourse])
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination upcoming-courses-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$latest_classes and !empty($latestWebinars) and !$latestWebinars->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between ">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.latest_classes') }}</h2>
-                        <p class="section-hint">{{ trans('home.latest_webinars_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?sort=newest" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container latest-webinars-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($latestWebinars as $latestWebinar)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $latestWebinar])
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination latest-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$best_rates and !empty($bestRateWebinars) and !$bestRateWebinars->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.best_rates') }}</h2>
-                        <p class="section-hint">{{ trans('home.best_rates_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?sort=best_rates" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container best-rates-webinars-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($bestRateWebinars as $bestRateWebinar)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $bestRateWebinar])
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination best-rates-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$trend_categories and !empty($trendCategories) and !$trendCategories->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <h2 class="section-title">{{ trans('home.trending_categories') }}</h2>
-                <p class="section-hint">{{ trans('home.trending_categories_hint') }}</p>
-
-
-                <div class="swiper-container trend-categories-swiper px-12 mt-40">
-                    <div class="swiper-wrapper py-20">
-                        @foreach($trendCategories as $trend)
-                            <div class="swiper-slide">
-                                <a href="{{ $trend->category->getUrl() }}">
-                                    <div class="trending-card d-flex flex-column align-items-center w-100">
-                                        <div class="trending-image d-flex align-items-center justify-content-center w-100" style="background-color: {{ $trend->color }}">
-                                            <div class="icon mb-3">
-                                                <img src="{{ $trend->getIcon() }}" width="10" class="img-cover" alt="{{ $trend->category->title }}">
-                                            </div>
-                                        </div>
-
-                                        <div class="item-count px-10 px-lg-20 py-5 py-lg-10">{{ $trend->category->webinars_count }} {{ trans('product.course') }}</div>
-
-                                        <h3>{{ $trend->category->title }}</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
-
-                <div class="d-flex justify-content-center">
-                    <div class="swiper-pagination trend-categories-swiper-pagination"></div>
-                </div>
-            </section>
-        @endif
-
-        {{-- Ads Bannaer --}}
-        @if(false && $homeSection->name == \App\Models\HomeSection::$full_advertising_banner and !empty($advertisingBanners1) and count($advertisingBanners1))
-            <div class="home-sections container">
-                <div class="row">
-                    @foreach($advertisingBanners1 as $banner1)
-                        <div class="col-{{ $banner1->size }}">
-                            <a href="{{ $banner1->link }}">
-                                <img src="{{ $banner1->image }}" class="img-cover rounded-sm" alt="{{ $banner1->title }}">
-                            </a>
-                        </div>
-                    @endforeach
+                <div
+                    class="journey-card reveal-right rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 group cursor-pointer relative">
+                    <img alt="Creative"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
                 </div>
             </div>
-        @endif
-        {{-- ./ Ads Bannaer --}}
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$best_sellers and !empty($bestSaleWebinars) and !$bestSaleWebinars->isEmpty())
-            <section class="home-sections container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.best_sellers') }}</h2>
-                        <p class="section-hint">{{ trans('home.best_sellers_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?sort=bestsellers" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container best-sales-webinars-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($bestSaleWebinars as $bestSaleWebinar)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $bestSaleWebinar])
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination best-sales-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$discount_classes and !empty($hasDiscountWebinars) and !$hasDiscountWebinars->isEmpty())
-            <section class="home-sections container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.discount_classes') }}</h2>
-                        <p class="section-hint">{{ trans('home.discount_classes_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?discount=on" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container has-discount-webinars-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-                            @foreach($hasDiscountWebinars as $hasDiscountWebinar)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $hasDiscountWebinar])
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination has-discount-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$free_classes and !empty($freeWebinars) and !$freeWebinars->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.free_classes') }}</h2>
-                        <p class="section-hint">{{ trans('home.free_classes_hint') }}</p>
-                    </div>
-
-                    <a href="/classes?free=on" class="btn btn-border-white">{{ trans('home.view_all') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container free-webinars-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-
-                            @foreach($freeWebinars as $freeWebinar)
-                                <div class="swiper-slide">
-                                    @include('web.default.includes.webinar.grid-card',['webinar' => $freeWebinar])
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination free-webinars-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$store_products and !empty($newProducts) and !$newProducts->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('update.store_products') }}</h2>
-                        <p class="section-hint">{{ trans('update.store_products_hint') }}</p>
-                    </div>
-
-                    <a href="/products" class="btn btn-border-white">{{ trans('update.all_products') }}</a>
-                </div>
-
-                <div class="mt-10 position-relative">
-                    <div class="swiper-container new-products-swiper px-12">
-                        <div class="swiper-wrapper py-20">
-
-                            @foreach($newProducts as $newProduct)
-                                <div class="swiper-slide">
-                                    @include('web.default.products.includes.card',['product' => $newProduct])
-                                </div>
-                            @endforeach
-
-                        </div>
-                    </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination new-products-swiper-pagination"></div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$testimonials and !empty($testimonials) and !$testimonials->isEmpty())
-            <div class="position-relative home-sections testimonials-container">
-
-                <div id="parallax1" class="ltr">
-                    <div data-depth="0.2" class="gradient-box left-gradient-box"></div>
-                </div>
-
-                <section class="container home-sections home-sections-swiper">
-                    <div class="text-center">
-                        <h2 class="section-title">{{ trans('home.testimonials') }}</h2>
-                        <p class="section-hint">{{ trans('home.testimonials_hint') }}</p>
-                    </div>
-
-                    <div class="position-relative">
-                        <div class="swiper-container testimonials-swiper px-12">
-                            <div class="swiper-wrapper">
-
-                                @foreach($testimonials as $testimonial)
-                                    <div class="swiper-slide">
-                                        <div class="testimonials-card position-relative py-15 py-lg-30 px-10 px-lg-20 rounded-sm shadow bg-white text-center">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <div class="testimonials-user-avatar">
-                                                    <img src="{{ $testimonial->user_avatar }}" alt="{{ $testimonial->user_name }}" class="img-cover rounded-circle">
-                                                </div>
-                                                <h4 class="font-16 font-weight-bold text-secondary mt-30">{{ $testimonial->user_name }}</h4>
-                                                <span class="d-block font-14 text-gray">{{ $testimonial->user_bio }}</span>
-                                                @include('web.default.includes.webinar.rate',['rate' => $testimonial->rate, 'dontShowRate' => true])
-                                            </div>
-
-                                            <p class="mt-25 text-gray font-14">{!! nl2br($testimonial->comment) !!}</p>
-
-                                            <div class="bottom-gradient"></div>
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-
-                        </div>
-
-                        <div class="d-flex justify-content-center">
-                            <div class="swiper-pagination testimonials-swiper-pagination"></div>
-                        </div>
-                    </div>
-                </section>
-
-                <div id="parallax2" class="ltr">
-                    <div data-depth="0.4" class="gradient-box right-gradient-box"></div>
-                </div>
-
-                <div id="parallax3" class="ltr">
-                    <div data-depth="0.8" class="gradient-box bottom-gradient-box"></div>
-                </div>
+            <div class="mt-12 text-center reveal">
+                <a href="https://www.tiktok.com/@hung_ai_creative?is_from_webapp=1&sender_device=pc"
+                    class="cta-btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 transition-colors text-sm font-medium">
+                    <span>Khám Phá</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide lucide-arrow-right" aria-hidden="true">
+                        <path d="M5 12h14"></path>
+                        <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                </a>
             </div>
-        @endif
+        </section>
 
-        @if(false && $homeSection->name == \App\Models\HomeSection::$subscribes and !empty($subscribes) and !$subscribes->isEmpty())
-            <div class="home-sections position-relative subscribes-container pe-none user-select-none">
-                <div id="parallax4" class="ltr d-none d-md-block">
-                    <div data-depth="0.2" class="gradient-box left-gradient-box"></div>
-                </div>
-
-                <section class="container home-sections home-sections-swiper">
-                    <div class="text-center">
-                        <h2 class="section-title">{{ trans('home.subscribe_now') }}</h2>
-                        <p class="section-hint">{{ trans('home.subscribe_now_hint') }}</p>
-                    </div>
-
-                    <div class="position-relative mt-30">
-                        <div class="swiper-container subscribes-swiper px-12">
-                            <div class="swiper-wrapper py-20">
-
-                                @foreach($subscribes as $subscribe)
-                                    @php
-                                        $subscribeSpecialOffer = $subscribe->activeSpecialOffer();
-                                    @endphp
-
-                                    <div class="swiper-slide">
-                                        <div class="subscribe-plan position-relative bg-white d-flex flex-column align-items-center rounded-sm shadow pt-50 pb-20 px-20">
-                                            @if($subscribe->is_popular)
-                                                <span class="badge badge-primary badge-popular px-15 py-5">{{ trans('panel.popular') }}</span>
-                                            @elseif(!empty($subscribeSpecialOffer))
-                                                <span class="badge badge-danger badge-popular px-15 py-5">{{ trans('update.percent_off', ['percent' => $subscribeSpecialOffer->percent]) }}</span>
-                                            @endif
-
-                                            <div class="plan-icon">
-                                                <img src="{{ $subscribe->icon }}" class="img-cover" alt="">
-                                            </div>
-
-                                            <h3 class="mt-20 font-30 text-secondary">{{ $subscribe->title }}</h3>
-                                            <p class="font-weight-500 text-gray mt-10">{{ $subscribe->description }}</p>
-
-                                            <div class="d-flex align-items-start mt-30">
-                                                @if(!empty($subscribe->price) and $subscribe->price > 0)
-                                                    @if(!empty($subscribeSpecialOffer))
-                                                        <div class="d-flex align-items-end line-height-1">
-                                                            <span class="font-36 text-primary">{{ handlePrice($subscribe->getPrice(), true, true, false, null, true) }}</span>
-                                                            <span class="font-14 text-gray ml-5 text-decoration-line-through">{{ handlePrice($subscribe->price, true, true, false, null, true) }}</span>
-                                                        </div>
-                                                    @else
-                                                        <span class="font-36 text-primary line-height-1">{{ handlePrice($subscribe->price, true, true, false, null, true) }}</span>
-                                                    @endif
-                                                @else
-                                                    <span class="font-36 text-primary line-height-1">{{ trans('public.free') }}</span>
-                                                @endif
-                                            </div>
-
-                                            <ul class="mt-20 plan-feature">
-                                                <li class="mt-10">{{ $subscribe->days }} {{ trans('financial.days_of_subscription') }}</li>
-                                                <li class="mt-10">
-                                                    @if($subscribe->infinite_use)
-                                                        {{ trans('update.unlimited') }}
-                                                    @else
-                                                        {{ $subscribe->usable_count }}
-                                                    @endif
-                                                    <span class="ml-5">{{ trans('update.subscribes') }}</span>
-                                                </li>
-                                            </ul>
-
-                                            @if(auth()->check())
-                                                <form action="/panel/financial/pay-subscribes" method="post" class="w-100">
-                                                    {{ csrf_field() }}
-                                                    <input name="amount" value="{{ $subscribe->price }}" type="hidden">
-                                                    <input name="id" value="{{ $subscribe->id }}" type="hidden">
-
-                                                    <div class="d-flex align-items-center mt-50 w-100">
-                                                        <button type="submit" class="btn btn-primary {{ !empty($subscribe->has_installment) ? '' : 'btn-block' }}">{{ trans('update.purchase') }}</button>
-
-                                                        @if(!empty($subscribe->has_installment))
-                                                            <a href="/panel/financial/subscribes/{{ $subscribe->id }}/installments" class="btn btn-outline-primary flex-grow-1 ml-10">{{ trans('update.installments') }}</a>
-                                                        @endif
-                                                    </div>
-                                                </form>
-                                            @else
-                                                <a href="/login" class="btn btn-primary btn-block mt-50">{{ trans('update.purchase') }}</a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                @endforeach
-                            </div>
-
-                        </div>
-                        <div class="d-flex justify-content-center">
-                            <div class="swiper-pagination subscribes-swiper-pagination"></div>
-                        </div>
-
-                    </div>
-                </section>
-
-                <div id="parallax5" class="ltr d-none d-md-block">
-                    <div data-depth="0.4" class="gradient-box right-gradient-box"></div>
-                </div>
-
-                <div id="parallax6" class="ltr d-none d-md-block">
-                    <div data-depth="0.6" class="gradient-box bottom-gradient-box"></div>
-                </div>
+        {{-- ===== COMMUNITY SECTION ===== --}}
+        <section class="py-24 bg-[#0a0a0a] relative overflow-hidden">
+            <div class="floating-blob blob-2" style="top: 20%; right: -200px; width: 400px; height: 400px; opacity: 0.1;">
             </div>
-        @endif
-
-        @if($homeSection->name == \App\Models\HomeSection::$find_instructors and !empty($findInstructorSection))
-            <section class="home-sections home-sections-swiper container find-instructor-section position-relative">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="">
-                            <h2 class="font-36 font-weight-bold text-dark">Khóa học đào tạo 1:1 AI</h2>
-                            <p class="font-16 font-weight-normal text-gray mt-10">
-                                Đồng hành cùng chuyên gia trong khóa học 1:1, bạn sẽ chinh phục công nghệ AI nhanh chóng và ứng dụng hiệu quả trong công việc, mở ra cánh cửa đến tương lai số.
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Tham Gia
+                    Cộng Đồng</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div
+                        class="community-card reveal-left stagger-1 bg-[#151515] p-8 rounded-3xl border flex flex-col border-white/5">
+                        <div class="relative z-10 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Website</h3>
+                            <p class="text-gray-400 text-sm mb-8 leading-relaxed h-20">Tổng hợp các bài viết chia sẻ kiến
+                                thức, kinh nghiệm ứng dụng AI cùng thông tin về các gói AI tools do HungAiCreative cung cấp.
                             </p>
-
-                            <div class="mt-35 d-flex align-items-center">
-                                @if(!empty($findInstructorSection['button1']) and !empty($findInstructorSection['button1']['title']) and !empty($findInstructorSection['button1']['link']))
-                                    <a href="{{$phoneUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
-                                @endif
-
-{{--                                @if(!empty($findInstructorSection['button2']) and !empty($findInstructorSection['button2']['title']) and !empty($findInstructorSection['button2']['link']))--}}
-{{--                                    <a href="{{ $findInstructorSection['button2']['link'] }}" class="btn btn-outline-primary">{{ $findInstructorSection['button2']['title'] }}</a>--}}
-{{--                                @endif--}}
+                            <ul class="space-y-4 mb-20 flex-1">
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Không mất phí tham gia.</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Cập nhật ưu đãi mới nhất tại
+                                        HungAiCreative</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Định vị HungAiCreative trên thị trường
+                                        phân phối
+                                        AI tools</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Tổng hợp thông tin hữu ích về AI</span>
+                                </li>
+                            </ul>
+                            <div>
+                                <button
+                                    class="arrow-btn w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-white/10 text-white hover:bg-white/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-12 col-lg-6 mt-20 mt-lg-0">
-                        <div class="position-relative ">
-                            <img src="/assets/coaching.jpg" class="find-instructor-section-hero" alt="Khóa học đào tạo 1:1 AI">
-                            <img src="/assets/default/img/home/circle-4.png" class="find-instructor-section-circle" alt="circle">
-                            <img src="/assets/default/img/home/dot.png" class="find-instructor-section-dots" alt="dots">
-
-                            <div class="example-instructor-card bg-white rounded-sm shadow-lg  p-5 p-md-15 d-flex align-items-center">
-                                <div class="example-instructor-card-avatar">
-                                    <img src="/assets/help.png" class="img-cover rounded-circle">
-                                </div>
-
-                                <div class="flex-grow-1 ml-15">
-                                    <span class="font-14 font-weight-bold text-secondary d-block">Thực hành trực tiếp cùng tôi</span>
-                                    <span class="text-gray font-12 font-weight-500">Sửa lỗi nhanh chóng</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$reward_program and !empty($rewardProgramSection))
-            <section class="home-sections home-sections-swiper container reward-program-section position-relative">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="position-relative reward-program-section-hero-card">
-                            <img src="{{ $rewardProgramSection['image'] }}" class="reward-program-section-hero" alt="{{ $rewardProgramSection['title'] }}">
-
-                            <div class="example-reward-card bg-white rounded-sm shadow-lg p-5 p-md-15 d-flex align-items-center">
-                                <div class="example-reward-card-medal">
-                                    <img src="/assets/default/img/rewards/medal.png" class="img-cover rounded-circle" alt="medal">
-                                </div>
-
-                                <div class="flex-grow-1 ml-15">
-                                    <span class="font-14 font-weight-bold text-secondary d-block">{{ trans('update.you_got_50_points') }}</span>
-                                    <span class="text-gray font-12 font-weight-500">{{ trans('update.for_completing_the_course') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6 mt-20 mt-lg-0">
-                        <div class="">
-                            <h2 class="font-36 font-weight-bold text-dark">{{ $rewardProgramSection['title'] ?? '' }}</h2>
-                            <p class="font-16 font-weight-normal text-gray mt-10">{{ $rewardProgramSection['description'] ?? '' }}</p>
-
-                            <div class="mt-35 d-flex align-items-center">
-                                @if(!empty($rewardProgramSection['button1']) and !empty($rewardProgramSection['button1']['title']) and !empty($rewardProgramSection['button1']['link']))
-                                    <a href="{{ $rewardProgramSection['button1']['link'] }}" class="btn btn-primary mr-15">{{ $rewardProgramSection['button1']['title'] }}</a>
-                                @endif
-
-                                @if(!empty($rewardProgramSection['button2']) and !empty($rewardProgramSection['button2']['title']) and !empty($rewardProgramSection['button2']['link']))
-                                    <a href="{{ $rewardProgramSection['button2']['link'] }}" class="btn btn-outline-primary">{{ $rewardProgramSection['button2']['title'] }}</a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$become_instructor and !empty($becomeInstructorSection))
-            <section class="home-sections home-sections-swiper container find-instructor-section position-relative">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-6">
-                        <div class="">
-                            <h2 class="font-36 font-weight-bold text-dark">{{ $becomeInstructorSection['title'] ?? '' }}</h2>
-                            <p class="font-16 font-weight-normal text-gray mt-10">{{ $becomeInstructorSection['description'] ?? '' }}</p>
-
-                            <div class="mt-35 d-flex align-items-center">
-                                @if(!empty($becomeInstructorSection['button1']) and !empty($becomeInstructorSection['button1']['title']) and !empty($becomeInstructorSection['button1']['link']))
-                                    <a href="{{ empty($authUser) ? '/login' : (($authUser->isUser()) ? $becomeInstructorSection['button1']['link'] : '/panel/financial/registration-packages') }}" class="btn btn-primary mr-15">{{ $becomeInstructorSection['button1']['title'] }}</a>
-                                @endif
-
-                                @if(!empty($becomeInstructorSection['button2']) and !empty($becomeInstructorSection['button2']['title']) and !empty($becomeInstructorSection['button2']['link']))
-                                    <a href="{{ empty($authUser) ? '/login' : (($authUser->isUser()) ? $becomeInstructorSection['button2']['link'] : '/panel/financial/registration-packages') }}" class="btn btn-outline-primary">{{ $becomeInstructorSection['button2']['title'] }}</a>
-                                @endif
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6 mt-20 mt-lg-0">
-                        <div class="position-relative ">
-                            <img src="{{ $becomeInstructorSection['image'] }}" class="find-instructor-section-hero" alt="{{ $becomeInstructorSection['title'] }}">
-                            <img src="/assets/default/img/home/circle-4.png" class="find-instructor-section-circle" alt="circle">
-                            <img src="/assets/default/img/home/dot.png" class="find-instructor-section-dots" alt="dots">
-
-                            <div class="example-instructor-card bg-white rounded-sm shadow-lg border p-5 p-md-15 d-flex align-items-center">
-                                <div class="example-instructor-card-avatar">
-                                    <img src="/assets/default/img/home/become_instructor.svg" class="img-cover rounded-circle" alt="user name">
-                                </div>
-
-                                <div class="flex-grow-1 ml-15">
-                                    <span class="font-14 font-weight-bold text-secondary d-block">{{ trans('update.become_an_instructor') }}</span>
-                                    <span class="text-gray font-12 font-weight-500">{{ trans('update.become_instructor_tagline') }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        @if($homeSection->name == \App\Models\HomeSection::$forum_section and !empty($forumSection))
-            <section class="home-sections home-sections-swiper container find-instructor-section position-relative">
-                <div class="row align-items-center">
-                    <div class="col-12 col-lg-6 mt-20 mt-lg-0">
-                        <div class="position-relative ">
-                            <img src="/assets/bg1.jpg" class="find-instructor-section-hero" alt="Đào tạo doanh nghiệp">
-                            <img src="/assets/default/img/home/circle-4.png" class="find-instructor-section-circle" alt="circle">
-                            <img src="/assets/default/img/home/dot.png" class="find-instructor-section-dots" alt="dots">
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-lg-6">
-                        <div class="">
-                            <h2 class="font-36 font-weight-bold text-dark">Đào tạo doanh nghiệp</h2>
-                            <p class="font-16 font-weight-normal text-gray mt-10">
-                                Training nhân sự áp dụng AI nâng cao hiệu quả công việc
+                    <div
+                        class="community-card featured reveal stagger-2 bg-[#151515] p-8 rounded-3xl border flex flex-col border-primary/50 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 blur-3xl rounded-full"></div>
+                        <div class="relative z-10 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Facebook</h3>
+                            <p class="text-gray-400 text-sm mb-8 leading-relaxed h-20">Cộng đồng thông tin chính thức của
+                                HungAiCreative trên Facebook, nơi tổ chức các sự kiện và chương trình có thưởng liên quan
+                                đến AI.
                             </p>
-                            <p class="font-16 font-weight-normal text-gray mt-10">
-                                Hợp tác thương mại hoá sản phẩm từ AI
-                            </p>
-
-                            <div class="mt-35 d-flex align-items-center">
-                                @if(!empty($forumSection['button1']) and !empty($forumSection['button1']['title']) and !empty($forumSection['button1']['link']))
-                                    <a href="{{$contactNowUrl}}" target="_blank" class="btn btn-primary mr-15">Liên hệ ngay</a>
-                                @endif
-
-{{--                                @if(!empty($forumSection['button2']) and !empty($forumSection['button2']['title']) and !empty($forumSection['button2']['link']))--}}
-{{--                                    <a href="{{ $forumSection['button2']['link'] }}" class="btn btn-outline-primary">{{ $forumSection['button2']['title'] }}</a>--}}
-{{--                                @endif--}}
+                            <ul class="space-y-4 mb-20 flex-1">
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Cuộc thi/sự kiện liên quan đến AI có giải
+                                        thưởng</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Cập nhật ưu đãi mới nhất tại
+                                        HungAiCreative</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Đội hỗ trợ tận tâm và nhanh chóng</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Tổng hợp thông tin hữu ích về AI</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Chia sẻ kiến thức và kinh nghiệm cùng
+                                        người dùng khác</span>
+                                </li>
+                            </ul>
+                            <div>
+                                <button
+                                    class="arrow-btn w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-[#fbcb1c] text-black hover:bg-[#e5b610]">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-right" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
-        @endif
-
-        @if($homeSection->name == \App\Models\HomeSection::$video_or_image_section and !empty($boxVideoOrImage))
-            <section class="home-sections home-sections-swiper position-relative">
-                <div class="home-video-mask"></div>
-                    <div class="container position-relative videoWrapper">
-{{--                <div class="container home-video-container d-flex flex-column align-items-center justify-content-center position-relative" style="background-image: url('/assets/bg3.jpg'">--}}
-{{--                    <a href="{{ $boxVideoOrImage['link'] ?? '' }}" class="home-video-play-button d-flex align-items-center justify-content-center position-relative">--}}
-{{--                        <i data-feather="play" width="36" height="36" class=""></i>--}}
-{{--                    </a>--}}
-                    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/F7Mof11BdGk?si=jPaQlFPpv2zb_BPu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-{{--                    <div class="mt-50 pt-10 text-center">--}}
-{{--                        <h2 class="home-video-title">{{ $boxVideoOrImage['title'] ?? '' }}</h2>--}}
-{{--                        <p class="home-video-hint mt-10">{{ $boxVideoOrImage['description'] ?? '' }}</p>--}}
-{{--                    </div>--}}
-                </div>
-            </section>
-        @endif
-
-        @if(false && $homeSection->name == \App\Models\HomeSection::$instructors and !empty($instructors) and !$instructors->isEmpty())
-            <section class="home-sections container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.instructors') }}</h2>
-                        <p class="section-hint">{{ trans('home.instructors_hint') }}</p>
-                    </div>
-
-                    <a href="/instructors" class="btn btn-border-white">{{ trans('home.all_instructors') }}</a>
-                </div>
-
-                <div class="position-relative mt-20 ltr">
-                    <div class="owl-carousel customers-testimonials instructors-swiper-container">
-
-                        @foreach($instructors as $instructor)
-                            <div class="item">
-                                <div class="shadow-effect">
-                                    <div class="instructors-card d-flex flex-column align-items-center justify-content-center">
-                                        <div class="instructors-card-avatar">
-                                            <img src="{{ $instructor->getAvatar(108) }}" alt="{{ $instructor->full_name }}" class="rounded-circle img-cover">
-                                        </div>
-                                        <div class="instructors-card-info mt-10 text-center">
-                                            <a href="{{ $instructor->getProfileUrl() }}" target="_blank">
-                                                <h3 class="font-16 font-weight-bold text-dark-blue">{{ $instructor->full_name }}</h3>
-                                            </a>
-
-                                            <p class="font-14 text-gray mt-5">{{ $instructor->bio }}</p>
-                                            <div class="stars-card d-flex align-items-center justify-content-center mt-10">
-                                                @php
-                                                    $i = 5;
-                                                @endphp
-                                                @while(--$i >= 5 - $instructor->rates())
-                                                    <i data-feather="star" width="20" height="20" class="active"></i>
-                                                @endwhile
-                                                @while($i-- >= 0)
-                                                    <i data-feather="star" width="20" height="20" class=""></i>
-                                                @endwhile
-                                            </div>
-
-                                            @if(!empty($instructor->hasMeeting()))
-                                                <a href="{{ $instructor->getProfileUrl() }}?tab=appointments" class="btn btn-primary btn-sm rounded-pill mt-15">{{ trans('home.reserve_a_live_class') }}</a>
-                                            @else
-                                                <a href="{{ $instructor->getProfileUrl() }}" class="btn btn-primary btn-sm rounded-pill mt-15">{{ trans('public.profile') }}</a>
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
+                    <div
+                        class="community-card reveal-right stagger-3 bg-[#151515] p-8 rounded-3xl border flex flex-col border-white/5">
+                        <div class="relative z-10 flex flex-col flex-1">
+                            <h3 class="text-2xl font-bold mb-4">Nhóm Zalo</h3>
+                            <p class="text-gray-400 text-sm mb-8 leading-relaxed h-20">Cộng đồng người dùng HungAiCreative
+                                trên
+                                Zalo, không gian chia sẻ kiến thức và kinh nghiệm sử dụng AI.</p>
+                            <ul class="space-y-4 mb-20 flex-1">
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Cuộc thi/sự kiện liên quan đến AI có giải
+                                        thưởng</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Cập nhật ưu đãi mới nhất tại
+                                        HungAiCreative</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Đội hỗ trợ tận tâm và nhanh chóng</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Tổng hợp thông tin hữu ích về AI</span>
+                                </li>
+                                <li class="flex gap-3 text-sm text-gray-300 items-start">
+                                    <span class="text-gray-600 mt-0.5">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24"
+                                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" class="lucide lucide-zap" aria-hidden="true">
+                                            <path
+                                                d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="leading-snug relative top-[-1px]">Chia sẻ kiến thức và kinh nghiệm cùng
+                                        người dùng khác</span>
+                                </li>
+                            </ul>
+                            <div>
+                                <button
+                                    class="arrow-btn w-10 h-10 rounded-full flex items-center justify-center transition-colors bg-white/10 text-white hover:bg-white/20">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"
+                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true">
+                                        <path d="M7 7h10v10"></path>
+                                        <path d="M7 17 17 7"></path>
+                                    </svg>
+                                </button>
                             </div>
-                        @endforeach
-
-                    </div>
-                </div>
-            </section>
-        @endif
-
-        {{-- Ads Bannaer --}}
-        @if($homeSection->name == \App\Models\HomeSection::$half_advertising_banner and !empty($advertisingBanners2) and count($advertisingBanners2))
-            <div class="home-sections container">
-                <div class="row">
-                    <div class="col-12 col-md-6 videoWrapper ">
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/mmfQY0V98kI?si=5L_Y71sDQMQvZ9Kt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-12 col-md-6 videoWrapper">
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/YNkMC_fqbL0?si=2xiYqDk_AZ_FOKAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        @endif
-        {{-- ./ Ads Bannaer --}}
+        </section>
 
-        @if(false && $homeSection->name == \App\Models\HomeSection::$organizations and !empty($organizations) and !$organizations->isEmpty())
-            <section class="home-sections home-sections-swiper container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">{{ trans('home.organizations') }}</h2>
-                        <p class="section-hint">{{ trans('home.organizations_hint') }}</p>
+        {{-- ===== PARTNERS SECTION ===== --}}
+        <section class="py-24 max-w-7xl mx-auto px-6 text-center">
+            <h2 class="section-title reveal text-4xl font-bold mb-6 font-heading mx-auto block">Đối Tác Sáng Tạo</h2>
+            <p class="reveal stagger-1 text-gray-400 mb-16 max-w-2xl mx-auto">
+                Xây Dựng Mọi Ý Tưởng Thành Hiện Thực Dễ Dàng &amp; Hiệu Quả<br>
+                Hãy lấy cảm hứng từ những nhà sáng tạo nổi bật của chúng tôi!
+            </p>
+            <div class="flex justify-center items-center gap-8 mb-16">
+                <div
+                    class="partner-avatar reveal-left stagger-1 text-center opacity-50 scale-90 transition-all cursor-pointer hover:opacity-100 h-24">
+                    <div class="w-16 h-16 rounded-full bg-gray-800 mx-auto mb-2 overflow-hidden">
+                        <img alt="avatar"
+                            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
                     </div>
-
-                    <a href="/organizations" class="btn btn-border-white">{{ trans('home.all_organizations') }}</a>
+                    <p class="text-xs">Xuân Mạnh AI</p>
                 </div>
-
-                <div class="position-relative mt-20">
-                    <div class="swiper-container organization-swiper-container px-12">
-                        <div class="swiper-wrapper py-20">
-
-                            @foreach($organizations as $organization)
-                                <div class="swiper-slide">
-                                    <div class="home-organizations-card d-flex flex-column align-items-center justify-content-center">
-                                        <div class="home-organizations-avatar">
-                                            <img src="{{ $organization->getAvatar(120) }}" class="img-cover rounded-circle" alt="{{ $organization->full_name }}">
-                                        </div>
-                                        <a href="{{ $organization->getProfileUrl() }}" class="mt-25 d-flex flex-column align-items-center justify-content-center">
-                                            <h3 class="home-organizations-title">{{ $organization->full_name }}</h3>
-                                            <p class="home-organizations-desc mt-10">{{ $organization->bio }}</p>
-                                            <span class="home-organizations-badge badge mt-15">{{ $organization->webinars_count }} {{ trans('panel.classes') }}</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            @endforeach
+                <div
+                    class="partner-avatar reveal stagger-2 text-center opacity-50 scale-90 transition-all cursor-pointer hover:opacity-100 h-24">
+                    <div class="w-16 h-16 rounded-full bg-gray-800 mx-auto mb-2 overflow-hidden">
+                        <img alt="avatar"
+                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
+                    </div>
+                    <p class="text-xs">Jiu Han</p>
+                </div>
+                <div class="partner-avatar active reveal-right stagger-3 text-center h-24 relative">
+                    <div
+                        class="w-20 h-20 rounded-full bg-transparent mx-auto mb-2 relative flex items-center justify-center p-1">
+                        <div class="absolute inset-0 border-2 border-white rounded-full"
+                            style="animation: spin-slow 8s linear infinite;"></div>
+                        <div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
+                            <img alt="avatar"
+                                src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
                         </div>
                     </div>
-
-                    <div class="d-flex justify-content-center">
-                        <div class="swiper-pagination organization-swiper-pagination"></div>
-                    </div>
+                    <p class="text-xs font-bold absolute w-full -bottom-1">Mr. Tuyển</p>
                 </div>
-            </section>
-        @endif
-
-        @if($homeSection->name == \App\Models\HomeSection::$blog and !empty($blog) and !$blog->isEmpty())
-            <section class="home-sections container">
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <h2 class="section-title">Bài viết</h2>
-                        <p class="section-hint">Những thông tin mới nhất về AI</p>
-                    </div>
-
-                    <a href="/blog" class="btn btn-border-white">Tất cả bài viết</a>
+            </div>
+            <div
+                class="reveal-scale bg-[#111] rounded-3xl p-10 max-w-4xl mx-auto text-left border border-white/5 relative mb-8 overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full"></div>
+                <div class="relative z-10">
+                    <h3 class="text-2xl font-bold font-heading">MrR. Tuyển <span
+                            class="text-sm font-normal text-gray-400">mrtuyen</span></h3>
+                    <p class="text-gray-500 mt-2 text-sm">AI Create</p>
+                    <div class="h-40"></div>
                 </div>
+            </div>
+            <div class="flex justify-center gap-2">
+                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
+                <div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
+            </div>
+        </section>
+    </main>
 
-                <div class="row mt-35">
+    {{-- ===== SCROLL REVEAL OBSERVER SCRIPT ===== --}}
+    <script>
+        function runIntro() {
+            document.body.classList.add('intro-active');
+            const introLoader = document.getElementById('introLoader');
+            const mainContent = document.getElementById('mainContent');
 
-                    @foreach($blog as $post)
-                        <div class="col-12 col-md-4 col-lg-4 mt-20 mt-lg-0">
-                            @include('web.default.blog.grid-list',['post' =>$post])
-                        </div>
-                    @endforeach
+            // Reset
+            introLoader.classList.remove('intro-done');
+            mainContent.classList.remove('content-revealed');
+            introLoader.style.transition = '';
 
-                </div>
-            </section>
-        @endif
+            // Force reflow để restart animations
+            void introLoader.offsetWidth;
 
-    @endforeach
+            // Reveal content khi curtain mở
+            setTimeout(() => mainContent.classList.add('content-revealed'), 1350);
+
+            // Hide intro hoàn toàn
+            setTimeout(() => {
+                introLoader.classList.add('intro-done');
+                document.body.classList.remove('intro-active');
+            }, 1800);
+        }
+
+        runIntro();
+        document.addEventListener('DOMContentLoaded', function () {
+            const observerOptions = {
+                threshold: 0.15,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all reveal elements
+            document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale, .section-title').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Parallax effect on hero image
+            const heroBg = document.querySelector('.hero-bg-img');
+            if (heroBg) {
+                window.addEventListener('scroll', () => {
+                    const scrolled = window.pageYOffset;
+                    if (scrolled < window.innerHeight) {
+                        heroBg.style.transform = `translateY(${scrolled * 0.4}px) scale(${1 + scrolled * 0.0005})`;
+                    }
+                });
+            }
+
+            // Tab buttons interaction
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    document.querySelectorAll('.tab-btn').forEach(b => {
+                        b.classList.remove('bg-white', 'text-black', 'font-medium');
+                        b.classList.add('text-gray-400', 'hover:text-white', 'hover:bg-white/10');
+                    });
+                    this.classList.remove('text-gray-400', 'hover:text-white', 'hover:bg-white/10');
+                    this.classList.add('bg-white', 'text-black', 'font-medium');
+                });
+            });
+        });
+    </script>
 @endsection
 
 @push('scripts_bottom')

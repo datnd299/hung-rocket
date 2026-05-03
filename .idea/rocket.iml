@@ -282,6 +282,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/xendit/xendit-php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yandex-money/yandex-checkout-sdk-php" />
       <excludeFolder url="file://$MODULE_DIR$/storage/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/storage/debugbar" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
