@@ -349,7 +349,7 @@
             <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block!">Showcase</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach ($news as $new)
-                    <div class="news-card reveal stagger-1 group cursor-pointer">
+                    <a class="news-card reveal stagger-1 group cursor-pointer" href="{{ $new['link'] }}" target="_blank">
                         <div class="news-img-wrapper rounded-2xl overflow-hidden mb-4 aspect-[4/3] bg-gray-900">
                             <img alt="{{ $new['title'] }}"
                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
@@ -357,7 +357,7 @@
                         </div>
                         <h3 class="font-bold text-lg mb-2 line-clamp-2 leading-tight">{{ $new['title'] }}</h3>
                         <p class="text-gray-400 text-sm mb-3 line-clamp-2">{{ $new['desc'] }}</p>
-                    </div>
+                    </a>
                 @endforeach
             </div>
             <div class="mt-12 text-center reveal">
@@ -455,7 +455,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($tutorials as $tutorial)
-                        <div
+                        <a href="{{ $tutorial['link'] }}" target="_blank"
                             class="tutorial-card reveal-scale stagger-2 bg-[#151515] rounded-2xl border border-white/5 group cursor-pointer">
                             <div
                                 class="aspect-video bg-gray-800 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
@@ -479,7 +479,7 @@
                                 <div class="text-xs text-gray-500 mb-1">{{ $tutorial['source'] }}</div>
                                 <h3 class="font-semibold text-sm mb-6">{{ $tutorial['title'] }}</h3>
                             </div>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
                 <div class="mt-12 text-center reveal">
