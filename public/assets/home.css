@@ -270,7 +270,7 @@
 /* ===== SECTION TITLES ===== */
 .section-title {
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .section-title::after {
@@ -788,6 +788,20 @@ html {
   position: relative;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+  .intro-logo-text {
+    font-size: 3rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .intro-logo-text {
+    font-size: 2rem;
+  }
+}
+
 @keyframes text-shimmer {
   0% {
     background-position: 0% 50%;
@@ -800,7 +814,7 @@ html {
 
 @media (max-width: 640px) {
   .intro-logo-text {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .intro-logo-icon {

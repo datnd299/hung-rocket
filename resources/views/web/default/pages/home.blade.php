@@ -3,55 +3,73 @@
 @php
     $news = [
         [
-            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
-            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
+            'img' => '/assets/home/1451839840638484493.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7622659979786374418?is_from_webapp=1&web_id=7390783194650838546',
+            'title' => 'Tiềm năng phát triển của AI trong thương mại điện tử',
+            'desc' => 'Những cơ hội và thách thức của người mẫu AI trong ngành thương mại điện tử. Cùng xem chia sẻ của mình và những anh em làm nghề trên chương trình Cuộc sống số kênh VTV1',
             'date' => '28 tháng 4, 2026'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
-            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
+            'img' => '/assets/home/4055357805047286866.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7619337517392825601?is_from_webapp=1&web_id=7390783194650838546',
+            'title' => 'Tiểm năng phim lịch sử Việt Nam nhờ công nghệ AI',
+            'desc' => 'Series Kỳ tài Đại Việt đã được giới thiệu trên VTV, mình muốn thay đổi nhận thức mọi người về các nội dung từ AI, nếu nghiêm túc nghiên cứu, đầy đủ kĩ thuật AI và các kỹ thuật truyền thống thì hoàn toàn có thể tạo ra nội dung chất lượng, hi vọng trong hành trình tiếp theo được sự góp ý của mọi người để tạo ra các sản phẩm chất lượng hơn nữa',
             'date' => '28 tháng 4, 2026'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
-            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
+            'img' => '/assets/home/3702513486554390110.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7617132436182322439?is_from_webapp=1&web_id=7390783194650838546',
+            'title' => 'Hai Bà Trưng - Kỳ tài Đại Việt đã lên sóng VTV!',
+            'desc' => 'Tập 1 "Trưng Trắc - Trưng Nhị" mở đầu series "Kỳ tài Đại Việt". Sản phẩm Phim lịch sử AI được hoàn thành bởi đội ngũ Color Mind.',
             'date' => '28 tháng 4, 2026'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1540224871915-bc8ffb782bdf?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Vlog Cannes của chúng ta đã lên mạng!',
-            'desc' => 'Vlog Cannes của chúng ta đã lên mạng! FR 🥂 100 giây
-                                                                                                                            MiniMax Hailuo AI tại WAIF.FR...',
+            'img' => '/assets/home/2095479259908344158.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7633057278618291474?is_from_webapp=1&web_id=7390783194650838546',
+            'title' => 'Phim ngắn kinh dị "Tễu" ',
+            'desc' => 'Một dự án collab giữa Vũ Duy Hưng (Colormind) và Mạnh Hồ (AZF Studio), kịch bản được cải biên từ một câu truyện dân gian về rối nước',
             'date' => '28 tháng 4, 2026'
         ]
     ];
     $tutorials = [
         [
-            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Giới thiệu về bộ công cụ AI Suite',
-            'source' => 'Freepik Academy'
+            'img' => '/assets/home/2342091894727595683.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7550693855754997010?is_from_webapp=1&web_id=7390783194650838546',
+            'title' => 'Lập trình siêu dễ dàng với AI',
+            'source' => 'Vibe Code'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Giới thiệu về bộ công cụ AI Suite',
-            'source' => 'Freepik Academy'
+            'img' => '/assets/home/863830210835487379.jpg',
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7595226945818758420?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546',
+            'title' => 'Cuộc gọi Deepfake Realtime',
+            'source' => 'Deepfake'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Giới thiệu về bộ công cụ AI Suite',
-            'source' => 'Freepik Academy'
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7554756780484545810?is_from_webapp=1&web_id=7390783194650838546',
+            'img' => '/assets/home/2781776388507519137.jpg',
+            'title' => 'Hướng dẫn Copy cử động',
+            'source' => 'Video'
         ],
         [
-            'img' => 'https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?q=80&amp;w=600&amp;auto=format&amp;fit=crop',
-            'title' => 'Giới thiệu về bộ công cụ AI Suite',
-            'source' => 'Freepik Academy'
+            'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7595226945818758420?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546',
+            'img' => '/assets/home/4557663950185781679.jpg',
+            'title' => 'Workflow đồng bộ nhận Affiliate',
+            'source' => 'Affiliate'
         ],
+    ];
+    $imgs = [
+        [
+            'src' => '/assets/home/848470293938957201.jpg',
+        ],
+        [
+            'src' => '/assets/home/2095479259908344158.jpg',
+        ],
+        [
+            'src' => '/assets/home/3044614876448037620.jpg',
+        ],
+        [
+            'src' => '/assets/home/3702513486554390110.jpg',
+        ]
     ]
 @endphp
 
@@ -59,7 +77,7 @@
     <link rel="stylesheet" href="/assets/default/vendors/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/owl-carousel2/owl.carousel.min.css">
 
-    <link rel="stylesheet" href="/assets/home.css">
+    <link rel="stylesheet" href="/assets/home.css?v=1.0.2">
 @endpush
 
 @section('content')
@@ -163,7 +181,7 @@
 
                 if (!video || !section) return;
 
-                const INTRO_DURATION = 0.8; // giây
+                const INTRO_DURATION = 2; // giây
                 let phase = 'waiting';    // 'waiting' → 'playing-intro' → 'scrubbing'
                 let isReady = false;
                 let targetTime = INTRO_DURATION;
@@ -328,7 +346,7 @@
 
         {{-- ===== NEWS SECTION ===== --}}
         <section class="py-24 max-w-7xl mx-auto px-6">
-            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Tin Tức</h2>
+            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block!">Showcase</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 @foreach ($news as $new)
                     <div class="news-card reveal stagger-1 group cursor-pointer">
@@ -339,14 +357,13 @@
                         </div>
                         <h3 class="font-bold text-lg mb-2 line-clamp-2 leading-tight">{{ $new['title'] }}</h3>
                         <p class="text-gray-400 text-sm mb-3 line-clamp-2">{{ $new['desc'] }}</p>
-                        <p class="text-gray-500 text-xs">{{ $new['date'] }}</p>
                     </div>
                 @endforeach
             </div>
             <div class="mt-12 text-center reveal">
                 <a href="https://www.tiktok.com/@hung_ai_creative?is_from_webapp=1&sender_device=pc" target="_blank"
                     class="cta-btn inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-white/20 transition-colors text-sm font-medium">
-                    <span>Tin tức</span>
+                    <span>Showcase</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
                         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                         class="lucide lucide-arrow-right" aria-hidden="true">
@@ -439,11 +456,11 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     @foreach ($tutorials as $tutorial)
                         <div
-                            class="tutorial-card reveal-scale stagger-2 bg-[#151515] rounded-2xl p-4 border border-white/5 group cursor-pointer">
+                            class="tutorial-card reveal-scale stagger-2 bg-[#151515] rounded-2xl border border-white/5 group cursor-pointer">
                             <div
                                 class="aspect-video bg-gray-800 rounded-xl mb-4 relative overflow-hidden flex items-center justify-center">
                                 <img alt="bg"
-                                    class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
+                                    class="absolute inset-0 w-full h-full object-cover group-hover:opacity-60 group-hover:scale-110 transition-all duration-700"
                                     src="{{ $tutorial['img'] }}">
                                 <div class="text-center relative z-10">
                                     <div
@@ -458,8 +475,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="text-xs text-gray-500 mb-1">{{ $tutorial['source'] }}</div>
-                            <h3 class="font-semibold text-sm mb-6">{{ $tutorial['title'] }}</h3>
+                            <div class="px-4">
+                                <div class="text-xs text-gray-500 mb-1">{{ $tutorial['source'] }}</div>
+                                <h3 class="font-semibold text-sm mb-6">{{ $tutorial['title'] }}</h3>
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -515,24 +534,22 @@
         </section>
 
         {{-- ===== CREATIVE JOURNEY ===== --}}
-        <section class="py-24 max-w-7xl mx-auto px-6">
-            <h2 class="section-title reveal text-4xl font-bold text-center mb-16 font-heading mx-auto block">Hành Trình Sáng
+        <section class="py-24 mx-auto px-6">
+            <h2
+                class="section-title reveal block text-4xl font-bold text-center mb-16 font-heading mx-auto block text-center">
+                Hành Trình Sáng
                 Tạo</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                <div
-                    class="journey-card reveal-left rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 group cursor-pointer relative">
-                    <img alt="Creative"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        src="https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                </div>
-                <div
-                    class="journey-card reveal-right rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 group cursor-pointer relative">
-                    <img alt="Creative"
-                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                        src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto gap-2">
+                @foreach ($imgs as $img)
+
+                    <div
+                        class="journey-card reveal-right rounded-2xl overflow-hidden aspect-video bg-gray-900 border border-white/10 group cursor-pointer relative">
+                        <img alt="Creative"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                            src="{{ $img['src'] }}">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+                    </div>
+                @endforeach
             </div>
             <div class="mt-12 text-center reveal">
                 <a href="https://www.tiktok.com/@hung_ai_creative?is_from_webapp=1&sender_device=pc"
@@ -802,60 +819,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        {{-- ===== PARTNERS SECTION ===== --}}
-        <section class="py-24 max-w-7xl mx-auto px-6 text-center">
-            <h2 class="section-title reveal text-4xl font-bold mb-6 font-heading mx-auto block">Đối Tác Sáng Tạo</h2>
-            <p class="reveal stagger-1 text-gray-400 mb-16 max-w-2xl mx-auto">
-                Xây Dựng Mọi Ý Tưởng Thành Hiện Thực Dễ Dàng &amp; Hiệu Quả<br>
-                Hãy lấy cảm hứng từ những nhà sáng tạo nổi bật của chúng tôi!
-            </p>
-            <div class="flex justify-center items-center gap-8 mb-16">
-                <div
-                    class="partner-avatar reveal-left stagger-1 text-center opacity-50 scale-90 transition-all cursor-pointer hover:opacity-100 h-24">
-                    <div class="w-16 h-16 rounded-full bg-gray-800 mx-auto mb-2 overflow-hidden">
-                        <img alt="avatar"
-                            src="https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
-                    </div>
-                    <p class="text-xs">Xuân Mạnh AI</p>
-                </div>
-                <div
-                    class="partner-avatar reveal stagger-2 text-center opacity-50 scale-90 transition-all cursor-pointer hover:opacity-100 h-24">
-                    <div class="w-16 h-16 rounded-full bg-gray-800 mx-auto mb-2 overflow-hidden">
-                        <img alt="avatar"
-                            src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
-                    </div>
-                    <p class="text-xs">Jiu Han</p>
-                </div>
-                <div class="partner-avatar active reveal-right stagger-3 text-center h-24 relative">
-                    <div
-                        class="w-20 h-20 rounded-full bg-transparent mx-auto mb-2 relative flex items-center justify-center p-1">
-                        <div class="absolute inset-0 border-2 border-white rounded-full"
-                            style="animation: spin-slow 8s linear infinite;"></div>
-                        <div class="w-full h-full rounded-full overflow-hidden bg-gray-800">
-                            <img alt="avatar"
-                                src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&amp;w=200&amp;auto=format&amp;fit=crop">
-                        </div>
-                    </div>
-                    <p class="text-xs font-bold absolute w-full -bottom-1">Mr. Tuyển</p>
-                </div>
-            </div>
-            <div
-                class="reveal-scale bg-[#111] rounded-3xl p-10 max-w-4xl mx-auto text-left border border-white/5 relative mb-8 overflow-hidden">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full"></div>
-                <div class="relative z-10">
-                    <h3 class="text-2xl font-bold font-heading">MrR. Tuyển <span
-                            class="text-sm font-normal text-gray-400">mrtuyen</span></h3>
-                    <p class="text-gray-500 mt-2 text-sm">AI Create</p>
-                    <div class="h-40"></div>
-                </div>
-            </div>
-            <div class="flex justify-center gap-2">
-                <div class="w-1.5 h-1.5 rounded-full bg-white"></div>
-                <div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
-                <div class="w-1.5 h-1.5 rounded-full bg-white/30"></div>
             </div>
         </section>
     </main>
