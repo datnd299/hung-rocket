@@ -19,8 +19,6 @@
     <link rel="stylesheet" href="/assets/default/vendors/simplebar/simplebar.css">
     <link rel="stylesheet" href="/assets/default/css/app.css?v=1.0.3">
 
-    <link rel="stylesheet" href="/assets/home-tw.css?v=1.0.2">
-
     @if($isRtl)
         <link rel="stylesheet" href="/assets/default/css/rtl-app.css">
     @endif

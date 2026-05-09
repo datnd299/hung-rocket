@@ -21,7 +21,8 @@
     <link rel="stylesheet" href="/assets/default/vendors/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="/assets/default/vendors/owl-carousel2/owl.carousel.min.css"> --}}
 
-    <link rel="stylesheet" href="/assets/home.css?v=1.0.2">
+    <link rel="stylesheet" href="/assets/home-tw.css?v=1.0.3">
+    <link rel="stylesheet" href="/assets/home.css?v=1.0.3">
     <style>
         :root {
             --gold: #C9A84C;
