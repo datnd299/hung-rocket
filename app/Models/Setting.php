@@ -191,7 +191,12 @@ class Setting extends Model implements TranslatableContract
      */
     static function getGeneralSettings($key = null)
     {
-        return self::getSetting(self::$general, self::$generalName, $key);
+        $setting = self::getSetting(self::$general, self::$generalName, $key);
+        if (is_array($setting)) {
+        $setting['site_email'] = 'hungaicreative@gmail.com';
+        $setting['site_phone'] = '0377028539';
+        }
+        return $setting;
     }
 
     /**

@@ -2,7 +2,9 @@
     <div class="max-w-7xl mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
             <div>
-                <div class="font-heading font-bold text-2xl mb-6">HungAiCreative</div>
+                <div class="font-heading font-bold text-2xl mb-6">
+                    <img src="/assets/logo-80.png">
+                </div>
             </div>
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">ĐƯỜNG DẪN</h4>
@@ -16,9 +18,10 @@
             <div>
                 <h4 class="text-xs font-bold uppercase tracking-widest text-gray-500 mb-6">LIÊN HỆ</h4>
                 <ul class="space-y-4 text-sm text-gray-300">
-                    <li><a href="#" class="hover:text-white">Facebook</a></li>
+                    <li><a href="https://www.facebook.com/HungAICreative" target="_blank"
+                            class="hover:text-white">Facebook</a></li>
                     <li><a href="#" class="hover:text-white">Zalo</a></li>
-                    <li><a href="#" class="hover:text-white">support@hungaicreative.com</a></li>
+                    <li><a href="#" class="hover:text-white">hungaicreative@gmail.com</a></li>
                 </ul>
             </div>
             <div>

@@ -50,7 +50,8 @@
             font-family: 'Be Vietnam Pro', sans-serif;
             background: var(--obsidian);
             color: var(--white);
-            overflow-x: hidden;
+            /* overflow-x: hidden; */
+            overflow: visible;
             cursor: none;
         }
 
@@ -1073,7 +1074,7 @@
         <div class="intro-curtain intro-curtain-left"></div>
         <div class="intro-curtain intro-curtain-right"></div>
     </div>
-    <main id="mainContent" class="overflow-x-hidden">
+    <main id="mainContent">
         <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" src="/assets/public/FGF.mp4" autoplay loop muted
             playsinline></video>
 
@@ -1117,6 +1118,26 @@
             ];
 
             $row2Original = [
+                [
+                    'src' => '/assets/public/b1.jpeg',
+                    'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7604333787417382164?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
+                ],
+                [
+                    'src' => '/assets/public/b2.png',
+                    'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7596681714534059284?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
+                ],
+                [
+                    'src' => '/assets/public/b3.jpeg',
+                    'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7554756780484545810?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
+                ],
+                [
+                    'src' => '/assets/public/b4.jpeg',
+                    'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7550693855754997010?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
+                ],
+                [
+                    'src' => '/assets/public/b5.jpeg',
+                    'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7595226945818758420?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
+                ],
                 [
                     'src' => '/assets/public/b1.jpeg',
                     'link' => 'https://www.tiktok.com/@hung_ai_creative/video/7604333787417382164?is_from_webapp=1&sender_device=pc&web_id=7390783194650838546'
